@@ -4,61 +4,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keivalya Pandya - AI & Robotics</title>
+    <title>Keivalya Pandya</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <style>
-        
+
     </style>
 </head>
 
 <body class="light-mode">
-    <button class="btn btn-outline-secondary theme-switch" onclick="toggleTheme()">Switch Theme</button>
+    <!-- <button class="btn btn-outline-secondary theme-switch" onclick="toggleTheme()">Switch Theme</button> -->
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" onchange="toggleTheme()" />
+            <div class="slider round"></div>
+        </label>
+    </div>
     <header class="text-center py-4">
-        <img src="profile.jpg" alt="Keivalya Pandya" class="profile-img">
+        <img src="assets/keivalya.jpg" alt="Keivalya Pandya" class="profile-img">
         <h1>Keivalya Pandya</h1>
         <p>I like to train robots on natural language 🤖🧠🦾</p>
+        <div id="dico">
+            <a href="https://x.com/keivalyap">
+                <div class="social-icon x-icon" aria-label="X logo"></div>
+            </a>
+            <a href="https://instagram.com/keivalya">
+                <div class="social-icon ig-icon" aria-label="Instagram logo"></div>
+            </a>
+            <a href="https://github.com/keivalya">
+                <div class="social-icon gh-icon" aria-label="GitHub logo"></div>
+            </a>
+            <a href="https://linkedin.com/in/keivalya">
+                <div class="social-icon li-icon" aria-label="LinkedIn logo"></div>
+            </a>
+        </div>
     </header>
     <div class="container">
-        <section class="mb-4">
+        <!-- <section class="mb-4">
             <h2>About Me</h2>
             <p>AI researcher and robotics developer passionate about natural language processing for intelligent
                 systems.</p>
-        </section>
+        </section> -->
         <section class="mb-4">
             <h2>Work & Research</h2>
             <p>Working on AI-driven robotics solutions with a focus on real-time NLP-based control systems.</p>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-date">2024 - Present</div>
+                    <div class="timeline-header">
+                        <div class="timeline-info">
+                            <div class="timeline-date">January 2025 - Present</div>
+                            <h5>Northeastern University</h5>
+                        </div>
+                        <div class="company-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/NU_RGB_seal_R.png"
+                                alt="Northeastern University Logo">
+                        </div>
+                    </div>
                     <div class="timeline-content">
-                        <h5>Eureka Labs - AI & Education</h5>
-                        <p>Founded and leading an AI-driven education company.</p>
+                        <div class="position">
+                            <h6>Khoury Research Apprentice</h6>
+                            <p>Fully-funded Master's Research on Human-Robot Interaction and Vision-Language-Action
+                                Modeling @ <a href="https://www.khoury.northeastern.edu/research-spaces/">People and
+                                    Robot Collaborative Systems (PARCS) Lab</a>, under <a
+                                    href="https://www.khoury.northeastern.edu/people/zhi-tan/">Prof. Zhi Tan</a>.</p>
+                        </div>
+                        <div class="position">
+                            <h6>Graduate Teaching Assistant</h6>
+                            <p>CS5180: Reinforcement Learning and Sequential Decision Making, for Spring 2025 taught by
+                                <a href="https://www.khoury.northeastern.edu/people/robert-platt/">Prof Robert
+                                    Platt</a>.
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2023 - 2024</div>
+                    <div class="timeline-header">
+                        <div class="timeline-info">
+                            <div class="timeline-date">December 2023 - August 2024</div>
+                            <h5>Birla Vishvakarma Mahavidyalaya</h5>
+                        </div>
+                        <div class="company-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/2/2c/Birla_Vishvakarma_Mahavidyalaya_logo.png"
+                                alt="BVM Logo">
+                        </div>
+                    </div>
                     <div class="timeline-content">
-                        <h5>OpenAI</h5>
-                        <p>Worked on improving GPT-4 and scaling AI models.</p>
+                        <div class="position">
+                            <h6>Junior Research Fellow</h6>
+                            <p>Developed a modular control system using OPC-UA for AMRs and workstations, optimizing
+                                unmanned assembly lines. Developed AI-driven website for Digital Manufacturing. Built
+                                an E-commerce platform with Django for institutional sales and inventory management.
+                                Mentored 15 interns in Smart Manufacturing Winter Internship 2023-2024.</p>
+                        </div>
+                        <!-- <div class="position">
+                            <h6>Technical Lead</h6>
+                            <p>Led technical initiatives for optimizing large language models.</p>
+                        </div> -->
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2017 - 2022</div>
+                    <div class="timeline-header">
+                        <div class="timeline-info">
+                            <div class="timeline-date">2017 - 2022</div>
+                            <h5>Foundation for Smart Manufacturing - Indian Institute of Technology, Delhi</h5>
+                        </div>
+                        <div class="company-logo">
+                            <img src="assets/fsm.png" alt="Tesla Logo">
+                        </div>
+                    </div>
                     <div class="timeline-content">
-                        <h5>Tesla - Senior AI Director</h5>
-                        <p>Led the Autopilot AI team, developing self-driving technology.</p>
+                        <div class="position">
+                            <h6>AI/ML Mentor</h6>
+                            <p>Led 44 ML/AI research projects under Prof. Dr. Sunil Jha, focusing on NLP and Computer Vision applications in Manufacturing.</p>
+                        </div>
+                        <div class="position">
+                            <h6>Summer 2022 Research Intern</h6>
+                            <p>Conducted research on Machine Learning.</p>
+                        </div>
+                        <div class="position">
+                            <h6>Summer 2021 Research Intern</h6>
+                            <p>Conducted research on Digital Twin.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </section>
         <section class="mb-4">
             <h2>Projects</h2>
             <p>Developed autonomous robotics applications, AI-powered customer service chatbots, and machine learning
-                frameworks.</p>
-            <section class="mb-4">
+                frameworks. <i>Still working on this section, you can find most of my open-source projects on my <a
+                    href="https://github.com/keivalya">GitHub profile</a>.</i></p>
+            <!-- <section class="mb-4">
                 <div class="row">
                     <div class="col-md-12 d-flex align-items-center mb-3">
                         <img src="micrograd.jpg" alt="Project 1" class="img-fluid rounded me-3"
@@ -87,27 +164,168 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
         </section>
-        <section class="mb-4">
+        <!-- <section class="mb-4">
             <h2>Education</h2>
             <p>Background in deep learning and robotics, specializing in artificial intelligence automation.</p>
-        </section>
+        </section> -->
         <section class="mb-4">
-            <h2>Publications & Talks</h2>
-            <p>Speaker at AI conferences, published research on deep learning in robotics and NLP applications.</p>
+            <h2>Publications</h2>
+            <!-- <p>Speaker at AI conferences, published research on deep learning in robotics and NLP applications.</p>
+            <ul class="publications-list" style="list-style: none; padding-left: 0;">
+                <li style="padding-left: 20px; border-left: 3px solid #ccc; margin-bottom: 15px;">
+                    <a href="#">World of Bits: An Open-Domain Platform for Web-Based Agents</a> ICML 2017<br>
+                    Tianlin (Tim) Shi, Andrej Karpathy, Linxi (Jim) Fan, Jonathan Hernandez, Percy Liang
+                </li>
+                <li style="padding-left: 20px; border-left: 3px solid #ccc; margin-bottom: 15px;">
+                    <a href="#">PixelCNN++: A PixelCNN Implementation with Discretized Logistic Mixture Likelihood and
+                        Other Modifications</a> ICLR 2017<br>
+                    Tim Salimans, Andrej Karpathy, Xi Chen, Diederik P. Kingma, and Yaroslav Bulatov
+                </li>
+                <li style="padding-left: 20px; border-left: 3px solid #ccc; margin-bottom: 15px;">
+                    <a href="#">Connecting Images and Natural Language (PhD thesis)</a> 2016<br>
+                    Andrej Karpathy
+                </li>
+                <li style="padding-left: 20px; border-left: 3px solid #ccc; margin-bottom: 15px;">
+                    <a href="#">DenseCap: Fully Convolutional Localization Networks for Dense Captioning</a> CVPR 2016
+                    (Oral)<br>
+                    Justin Johnson*, Andrej Karpathy*, Li Fei-Fei
+                </li>
+                <li style="padding-left: 20px; border-left: 3px solid #ccc; margin-bottom: 15px;">
+                    <a href="#">Visualizing and Understanding Recurrent Networks</a> ICLR 2016 Workshop<br>
+                    Andrej Karpathy*, Justin Johnson*, Li Fei-Fei
+                </li>
+                <li style="padding-left: 20px; border-left: 3px solid #ccc; margin-bottom: 15px;">
+                    <a href="#">Deep Visual-Semantic Alignments for Generating Image Descriptions</a> CVPR 2015
+                    (Oral)<br>
+                    Andrej Karpathy, Li Fei-Fei
+                </li>
+                <li style="padding-left: 20px; border-left: 3px solid #ccc; margin-bottom: 15px;">
+                    <a href="#">ImageNet Large Scale Visual Recognition Challenge</a> IJCV 2015<br>
+                    Olga Russakovsky, Jia Deng, Hao Su, Jonathan Krause, Sanjeev Satheesh, Sean Ma, Zhiheng Huang,
+                    Andrej Karpathy, Aditya Khosla, Michael Bernstein, Alexander C. Berg, Li Fei-Fei
+                </li>
+                <li style="padding-left: 20px; border-left: 3px solid #ccc; margin-bottom: 15px;">
+                    <a href="#">Deep Fragment Embeddings for Bidirectional Image-Sentence Mapping</a> NIPS 2014<br>
+                    Andrej Karpathy, Armand Joulin, Li Fei-Fei
+                </li>
+                <li style="padding-left: 20px; border-left: 3px solid #ccc; margin-bottom: 15px;">
+                    <a href="#">Large-Scale Video Classification with Convolutional Neural Networks</a> CVPR 2014
+                    (Oral)<br>
+                    Andrej Karpathy, George Toderici, Sanketh Shetty, Thomas Leung, Rahul Sukthanka, Li Fei-Fei
+                </li>
+            </ul> -->
+            All publications are available on <a href="https://scholar.google.com/citations?user=yourid">Google
+                Scholar</a>.
         </section>
-        <div class="text-center">
-            <a href="https://twitter.com/" class="btn btn-primary">Twitter</a>
-            <a href="https://github.com/" class="btn btn-dark">GitHub</a>
-            <a href="https://yourwebsite.com" class="btn btn-secondary">Website</a>
-        </div>
+        <section>
+            <h2>Talks</h2>
+            <p>Presented talks at conferences, workshops, and seminars.</p>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <a href="https://youtu.be/pvDL-bTFKvE">
+                        <div class="card h-100">
+                            <img src="assets/surviving-eng.jpg" class="card-img-top" alt="GPU Mode 2024">
+                            <div class="card-body">
+                                <h5 class="card-title">Surviving Engineering with Keivalya</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <a href="https://youtu.be/mq1eXA9PMJY">
+                        <div class="card h-100">
+                            <img src="assets/how-robo.jpg" class="card-img-top" alt="No Priors podcast">
+                            <div class="card-body">
+                                <h5 class="card-title">How I made it into Robotics & AI</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- <div class="col-md-3 mb-4">
+                    <a href="https://youtube.com/shorts/SNFxqa3YCsQ"><div class="card h-100">
+                        <img src="assets/crack-robotics.jpg" class="card-img-top" alt="UC Berkeley AI Hackathon">
+                        <div class="card-body">
+                            <h5 class="card-title">Crack Robotics</h5>
+                        </div>
+                    </div></a>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="state-of-gpt.jpg" class="card-img-top" alt="State of GPT">
+                        <div class="card-body">
+                            <h5 class="card-title">State of GPT @ Microsoft Build 2023 (<a href="#">slides</a>)</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="lex-fridman-podcast.jpg" class="card-img-top" alt="Lex Fridman podcast">
+                        <div class="card-body">
+                            <h5 class="card-title">Lex Fridman podcast 2022</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="robot-brains-podcast.jpg" class="card-img-top" alt="Robot Brains podcast">
+                        <div class="card-body">
+                            <h5 class="card-title">Robot Brains podcast with Pieter Abbeel 2021</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="tesla-ai-day.jpg" class="card-img-top" alt="Tesla AI Day">
+                        <div class="card-body">
+                            <h5 class="card-title">Tesla AI Day 2021</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="ai-self-driving.jpg" class="card-img-top" alt="AI for Full Self-Driving">
+                        <div class="card-body">
+                            <h5 class="card-title">AI for Full Self-Driving @ CVPR 2021</h5>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!-- <div class="text-center">
+            <a href="https://twitter.com/keivalyap" class="btn btn-primary">Twitter</a>
+            <a href="https://github.com/keivalya" class="btn btn-dark">GitHub</a>
+            <a href="https://www.keivalya.com" class="btn btn-secondary">Website</a>
+        </div> -->
     </div>
     <script>
         function toggleTheme() {
             document.body.classList.toggle('dark-mode');
             document.body.classList.toggle('light-mode');
+
+            // Optional: Save preference to localStorage
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
         }
+
+        // On page load, check for saved theme preference
+        document.addEventListener('DOMContentLoaded', function () {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                document.body.classList.remove('light-mode');
+                document.getElementById('checkbox').checked = true;
+            }
+        });
     </script>
 </body>
 
