@@ -315,17 +315,21 @@
                 </div> -->
             </div>
         </section>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <!-- <div class="text-center">
             <a href="https://twitter.com/keivalyap" class="btn btn-primary">Twitter</a>
             <a href="https://github.com/keivalya" class="btn btn-dark">GitHub</a>
             <a href="https://www.keivalya.com" class="btn btn-secondary">Website</a>
         </div> -->
     </div>
+    <footer class="text-center py-3">
+        <p>&copy; <span id="year"></span> Keivalya Pandya. All rights reserved.</p>
+        <p>
+            <a href="mailto:keivalyapandya@gmail.com">Contact</a> | 
+            <a href="https://github.com/keivalya" target="_blank">GitHub</a> | 
+            <a href="https://www.linkedin.com/in/keivalya" target="_blank">LinkedIn</a>
+        </p>
+    </footer>
+    
     <script>
         function toggleTheme() {
             document.body.classList.toggle('dark-mode');
@@ -348,6 +352,8 @@
                 document.getElementById('checkbox').checked = true;
             }
         });
+
+        document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
 
