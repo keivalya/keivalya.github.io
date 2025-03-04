@@ -324,13 +324,57 @@ footer {
     background-color: #f8f9fa;
     padding: 15px;
     font-size: 14px;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-footer a {
-    text-decoration: none;
-    color: #007bff;
+/* Light mode footer */
+.light-mode footer {
+    background-color: #f8f9fa;
+    color: #212529;
 }
 
-footer a:hover {
-    text-decoration: underline;
+/* Dark mode footer */
+.dark-mode footer {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+/* Card Styling */
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Light mode card */
+.light-mode .card {
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode card */
+.dark-mode .card {
+    background: #242424;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+    color: #f0f0f0;
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 242, 254, 0.3);
+}
+
+/* Card Title */
+.card-title {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Image styling */
+.card-img-top {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
