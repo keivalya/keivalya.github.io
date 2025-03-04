@@ -81,6 +81,7 @@ input:checked + .slider:before {
     content: "🌙"; /* Moon emoji */
     transform: translateX(24px);
     color: #f1c40f; /* Moon color */
+    background-color: #242B4B;
 }
 
 .slider.round {
