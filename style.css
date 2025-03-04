@@ -60,7 +60,12 @@ body {
 .slider:before {
     background-color: #fff;
     bottom: 4px;
-    content: "";
+    content: "☀️"; /* Sun emoji */
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f39c12; /* Sun color */
     height: 18px;
     left: 4px;
     position: absolute;
@@ -72,8 +77,10 @@ input:checked+.slider {
     background-color: #007bff;
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
+    content: "🌙"; /* Moon emoji */
     transform: translateX(24px);
+    color: #f1c40f; /* Moon color */
 }
 
 .slider.round {
@@ -305,4 +312,25 @@ a {
     padding: 10px;
     background-color: rgba(0,0,0,0.05);
     border-radius: 8px;
+}
+
+section {
+    margin-bottom: 30px; /* Adjust spacing as needed */
+    padding-bottom: 30px; /* Optional: Adds more separation */
+    border-bottom: 1px solid #ddd; /* Optional: Light separator for clarity */
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 15px;
+    font-size: 14px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
