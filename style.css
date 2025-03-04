@@ -300,3 +300,9 @@ a {
         background-size: contain; /* Ensure the icon fits within the new dimensions */
     }
 }
+
+.bio-text {
+    padding: 10px;
+    background-color: rgba(0,0,0,0.05);
+    border-radius: 8px;
+}
