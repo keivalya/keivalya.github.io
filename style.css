@@ -3,6 +3,14 @@ body {
     transition: background 0.3s, color 0.3s;
 }
 
+.header {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
 .dark-mode {
     background: #121212;
     color: #f0f0f0;
@@ -60,12 +68,14 @@ body {
 .slider:before {
     background-color: #fff;
     bottom: 4px;
-    content: "☀️"; /* Sun emoji */
+    content: "☀️";
+    /* Sun emoji */
     font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #f39c12; /* Sun color */
+    color: #f39c12;
+    /* Sun color */
     height: 18px;
     left: 4px;
     position: absolute;
@@ -77,10 +87,12 @@ input:checked+.slider {
     background-color: #007bff;
 }
 
-input:checked + .slider:before {
-    content: "🌙"; /* Moon emoji */
+input:checked+.slider:before {
+    content: "🌙";
+    /* Moon emoji */
     transform: translateX(24px);
-    color: #f1c40f; /* Moon color */
+    color: #f1c40f;
+    /* Moon color */
     background-color: #242B4B;
 }
 
@@ -131,11 +143,14 @@ input:checked + .slider:before {
     justify-content: center;
     max-width: 100%;
 }
+
 /* Media query for mobile screens */
 @media screen and (max-width: 768px) {
     .company-logo {
-        max-width: 60px; /* Maximum width of 70px on mobile screens */
-        width: 100%; /* Allows the logo to scale down proportionally */
+        max-width: 60px;
+        /* Maximum width of 70px on mobile screens */
+        width: 100%;
+        /* Allows the logo to scale down proportionally */
     }
 }
 
@@ -191,14 +206,16 @@ input:checked + .slider:before {
 /* Light mode timeline-date styling */
 .light-mode .timeline-date {
     font-weight: bold;
-    color: #00b4bd; /* Slightly darker teal color for light mode */
+    color: #00b4bd;
+    /* Slightly darker teal color for light mode */
     margin-bottom: 5px;
 }
 
 /* Dark mode timeline-date styling */
 .dark-mode .timeline-date {
     font-weight: bold;
-    color: #00f2fe; /* Original bright teal color for dark mode */
+    color: #00f2fe;
+    /* Original bright teal color for dark mode */
     margin-bottom: 5px;
 }
 
@@ -210,21 +227,25 @@ a {
 
 /* Light mode link styling */
 .light-mode a {
-    color: #0366d6; /* GitHub-style blue for light mode */
+    color: #0366d6;
+    /* GitHub-style blue for light mode */
 }
 
 .light-mode a:hover {
-    color: #0056b3; /* Darker blue on hover for light mode */
+    color: #0056b3;
+    /* Darker blue on hover for light mode */
     text-decoration: underline;
 }
 
 /* Dark mode link styling */
 .dark-mode a {
-    color: #58a6ff; /* Lighter blue for dark mode for better contrast */
+    color: #58a6ff;
+    /* Lighter blue for dark mode for better contrast */
 }
 
 .dark-mode a:hover {
-    color: #79beff; /* Even lighter blue on hover for dark mode */
+    color: #79beff;
+    /* Even lighter blue on hover for dark mode */
     text-decoration: underline;
 }
 
@@ -237,8 +258,10 @@ a {
 /* Base styling for social icons container */
 #dico {
     display: flex;
-    justify-content: center; /* Center icons horizontally */
-    align-items: center; /* Center icons vertically */
+    justify-content: center;
+    /* Center icons horizontally */
+    align-items: center;
+    /* Center icons vertically */
 }
 
 /* Base styling for the icon */
@@ -249,13 +272,15 @@ a {
     background-position: center;
     background-repeat: no-repeat;
     display: inline-block;
-    margin: 0 2px; /* Add spacing between icons */
+    margin: 0 2px;
+    /* Add spacing between icons */
 }
 
 /* X icon with theme-specific images */
 .light-mode .x-icon {
     background-image: url('assets/socials/x_light.svg');
 }
+
 .dark-mode .x-icon {
     background-image: url('assets/socials/x_dark.svg');
 }
@@ -264,6 +289,7 @@ a {
 .light-mode .ig-icon {
     background-image: url('assets/socials/ig_light.svg');
 }
+
 .dark-mode .ig-icon {
     background-image: url('assets/socials/ig_dark.svg');
 }
@@ -272,6 +298,7 @@ a {
 .light-mode .gh-icon {
     background-image: url('assets/socials/gh_light.svg');
 }
+
 .dark-mode .gh-icon {
     background-image: url('assets/socials/gh_dark.svg');
 }
@@ -280,6 +307,7 @@ a {
 .light-mode .li-icon {
     background-image: url('assets/socials/li_light.svg');
 }
+
 .dark-mode .li-icon {
     background-image: url('assets/socials/li_dark.svg');
 }
@@ -288,6 +316,7 @@ a {
 .light-mode .yt-icon {
     background-image: url('assets/socials/yt_light.svg');
 }
+
 .dark-mode .yt-icon {
     background-image: url('assets/socials/yt_dark.svg');
 }
@@ -296,29 +325,42 @@ a {
 .light-mode .gs-icon {
     background-image: url('assets/socials/gs_light.svg');
 }
+
 .dark-mode .gs-icon {
     background-image: url('assets/socials/gs_dark.svg');
 }
 
 /* Media query for mobile screens */
 @media screen and (max-width: 768px) {
-    .x-icon, .ig-icon, .gh-icon, .li-icon, .yt-icon, .gs-icon {
-        width: 24px;  /* Reduced width */
-        height: 24px; /* Reduced height */
-        background-size: contain; /* Ensure the icon fits within the new dimensions */
+
+    .x-icon,
+    .ig-icon,
+    .gh-icon,
+    .li-icon,
+    .yt-icon,
+    .gs-icon {
+        width: 24px;
+        /* Reduced width */
+        height: 24px;
+        /* Reduced height */
+        background-size: contain;
+        /* Ensure the icon fits within the new dimensions */
     }
 }
 
 .bio-text {
     padding: 10px;
-    background-color: rgba(0,0,0,0.05);
+    background-color: rgba(0, 0, 0, 0.05);
     border-radius: 8px;
 }
 
 section {
-    margin-bottom: 30px; /* Adjust spacing as needed */
-    padding-bottom: 30px; /* Optional: Adds more separation */
-    border-bottom: 1px solid #ddd; /* Optional: Light separator for clarity */
+    margin-bottom: 30px;
+    /* Adjust spacing as needed */
+    padding-bottom: 30px;
+    /* Optional: Adds more separation */
+    border-bottom: 1px solid #ddd;
+    /* Optional: Light separator for clarity */
 }
 
 footer {
