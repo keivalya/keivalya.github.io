@@ -42,6 +42,8 @@
 
         gtag('config', 'G-KB3W913BBC');
     </script>
+    <script src="js/headline.js"></script>
+    <script src="js/toggle-theme.js"></script>
 </head>
 
 <body class="light-mode">
@@ -54,7 +56,7 @@
     <header class="text-center py-4">
         <img src="assets/keivalya.jpg" alt="Keivalya Pandya" class="profile-img">
         <h1>Keivalya Pandya</h1>
-        <p class="bio-text">I train robots to-do boring chores (so that I can play) 🤖🧠🦾</p>
+        <p class="bio-text" id="bio-text">I build robots so they work, and I play! 🤖🧠🦾</p>
         <div id="dico">
             <a href="https://x.com/keivalyap" target="_blank">
                 <div class="social-icon x-icon" aria-label="X logo"></div>
@@ -220,21 +222,21 @@
             <h2>Publications</h2>
             <ul class="publications-list" style="list-style: none; padding-left: 0;">
                 <li style="padding-left: 20px; border-left: 3px solid #ccc; margin-bottom: 15px;">
-                    <a href="#">A comprehensive overview of artificial intelligence applications in basketball</a> JPES
+                    <a href="https://efsupit.ro/images/stories/ianuarie2024/Art6.pdf">A comprehensive overview of artificial intelligence applications in basketball</a> JPES
                     2024<br>
                     Ebenzer Agbozo, Keivalya Pandya, Predrag Jovanovic, Ekaterina Anatolyevna Suvorova
                 </li>
                 <li style="padding-left: 20px; border-left: 3px solid #ccc; margin-bottom: 15px;">
-                    <a href="#">Automating Customer Service using LangChain</a><br>
+                    <a href="https://arxiv.org/pdf/2310.05421">Automating Customer Service using LangChain</a><br>
                     Keivalya Pandya, Mehfuza Holia
                 </li>
                 <li style="padding-left: 20px; border-left: 3px solid #ccc; margin-bottom: 15px;">
-                    <a href="#">Application of digital twin in space engineering using AR and IOT technology</a> Current
+                    <a href="https://www.currentscience.ac.in/Volumes/125/10/1126.pdf">Application of digital twin in space engineering using AR and IOT technology</a> Current
                     Sci. 2023<br>
                     Jai G Singla, Jay Goswami, Keivalya Pandya, Darshankumar K Patel, Vinay J Patel, Mehfuza Holia
                 </li>
                 <li style="padding-left: 20px; border-left: 3px solid #ccc; margin-bottom: 15px;">
-                    <a href="#">Bare PCB Fault Detection in Real-time Using YOLOv5</a> IJCSMC 2022<br>
+                    <a href="https://ijcsmc.com/docs/papers/December2022/V11I12202213.pdf">Bare PCB Fault Detection in Real-time Using YOLOv5</a> IJCSMC 2022<br>
                     Keivalya Pandya, Devesh Tarasia
                 </li>
             </ul>
@@ -266,54 +268,6 @@
                         </div>
                     </a>
                 </div>
-                <!-- <div class="col-md-3 mb-4">
-                    <a href="https://youtube.com/shorts/SNFxqa3YCsQ"><div class="card h-100">
-                        <img src="assets/crack-robotics.jpg" class="card-img-top" alt="UC Berkeley AI Hackathon">
-                        <div class="card-body">
-                            <h5 class="card-title">Crack Robotics</h5>
-                        </div>
-                    </div></a>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="card h-100">
-                        <img src="state-of-gpt.jpg" class="card-img-top" alt="State of GPT">
-                        <div class="card-body">
-                            <h5 class="card-title">State of GPT @ Microsoft Build 2023 (<a href="#">slides</a>)</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="card h-100">
-                        <img src="lex-fridman-podcast.jpg" class="card-img-top" alt="Lex Fridman podcast">
-                        <div class="card-body">
-                            <h5 class="card-title">Lex Fridman podcast 2022</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="card h-100">
-                        <img src="robot-brains-podcast.jpg" class="card-img-top" alt="Robot Brains podcast">
-                        <div class="card-body">
-                            <h5 class="card-title">Robot Brains podcast with Pieter Abbeel 2021</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="card h-100">
-                        <img src="tesla-ai-day.jpg" class="card-img-top" alt="Tesla AI Day">
-                        <div class="card-body">
-                            <h5 class="card-title">Tesla AI Day 2021</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="card h-100">
-                        <img src="ai-self-driving.jpg" class="card-img-top" alt="AI for Full Self-Driving">
-                        <div class="card-body">
-                            <h5 class="card-title">AI for Full Self-Driving @ CVPR 2021</h5>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </section>
         <section>
@@ -335,32 +289,6 @@
             <a href="https://www.linkedin.com/in/keivalya" target="_blank">LinkedIn</a>
         </p>
     </footer>
-
-    <script>
-        function toggleTheme() {
-            document.body.classList.toggle('dark-mode');
-            document.body.classList.toggle('light-mode');
-
-            // Optional: Save preference to localStorage
-            if (document.body.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
-            } else {
-                localStorage.setItem('theme', 'light');
-            }
-        }
-
-        // On page load, check for saved theme preference
-        document.addEventListener('DOMContentLoaded', function () {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark') {
-                document.body.classList.add('dark-mode');
-                document.body.classList.remove('light-mode');
-                document.getElementById('checkbox').checked = true;
-            }
-        });
-
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
 </body>
 
 </html>
