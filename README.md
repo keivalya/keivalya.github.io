@@ -71,7 +71,7 @@ I am a researcher and developer passionate about **Human-Robot Interaction (HRI)
 - **Application of Digital Twin in Space Engineering using AR and IoT Technology** (Current Sci. 2023).  
 - **Bare PCB Fault Detection in Real-time Using YOLOv5** (IJCSMC 2022).  
 
-Explore all publications on [Google Scholar](https://scholar.google.com).
+Explore all publications on [Google Scholar](https://scholar.google.com/citations?user=Swvp-1MAAAAJ).
 
 ---
 
