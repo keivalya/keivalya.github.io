@@ -330,6 +330,15 @@ a {
     background-image: url('assets/socials/gs_dark.svg');
 }
 
+/* Substack icon with theme-specific images */
+.light-mode .substack-icon {
+    background-image: url('assets/socials/substack_light.svg');
+}
+
+.dark-mode .substack-icon {
+    background-image: url('assets/socials/substack_dark.svg');
+}
+
 /* Media query for mobile screens */
 @media screen and (max-width: 768px) {
 
@@ -338,7 +347,8 @@ a {
     .gh-icon,
     .li-icon,
     .yt-icon,
-    .gs-icon {
+    .gs-icon,
+    .substack-icon {
         width: 24px;
         /* Reduced width */
         height: 24px;
