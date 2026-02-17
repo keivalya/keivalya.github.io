@@ -339,6 +339,15 @@ a {
     background-image: url('assets/socials/substack_dark.svg');
 }
 
+/* Medium icon with theme-specific images */
+.light-mode .medium-icon {
+    background-image: url('assets/socials/medium_light.svg');
+}
+
+.dark-mode .medium-icon {
+    background-image: url('assets/socials/medium_dark.svg');
+}
+
 /* Media query for mobile screens */
 @media screen and (max-width: 768px) {
 
@@ -348,7 +357,8 @@ a {
     .li-icon,
     .yt-icon,
     .gs-icon,
-    .substack-icon {
+    .substack-icon,
+    .medium-icon {
         width: 24px;
         /* Reduced width */
         height: 24px;
@@ -430,4 +440,29 @@ footer {
 .card-img-top {
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
+}
+
+/* Featured Project Styling */
+.featured-project {
+    border: 2px solid #00f2fe;
+    background-color: rgba(0, 242, 254, 0.05);
+    border-radius: 12px;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 242, 254, 0.2);
+}
+
+.dark-mode .featured-project {
+    background-color: rgba(0, 242, 254, 0.1);
+    border-color: #00f2fe;
+}
+
+.light-mode .featured-project {
+    background-color: #f0fbff;
+    border-color: #00b4bd;
+    /* Darker teal for light mode */
 }
