@@ -26,6 +26,31 @@ body {
     margin: 40px auto;
 }
 
+.resume-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 20px;
+    border: 2px solid currentColor;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: inherit;
+    opacity: 0.75;
+    transition: opacity 0.2s, background 0.2s, color 0.2s;
+}
+
+.resume-btn:hover {
+    opacity: 1;
+    background: #212529;
+    color: #f8f9fa;
+}
+
+.dark-mode .resume-btn:hover {
+    background: #f0f0f0;
+    color: #121212;
+}
+
 .profile-img {
     width: 150px;
     height: 150px;
