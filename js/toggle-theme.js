@@ -1,13 +1,7 @@
 function toggleTheme() {
-    document.body.classList.toggle('dark-mode');
-    document.body.classList.toggle('light-mode');
-
-    // Optional: Save preference to localStorage
-    if (document.body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-    } else {
-        localStorage.setItem('theme', 'light');
-    }
+    const isDark = document.body.classList.toggle('dark-mode');
+    document.body.classList.toggle('light-mode', !isDark);
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
 }
 
 // On page load, check for saved theme preference

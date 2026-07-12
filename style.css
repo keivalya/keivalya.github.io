@@ -3,14 +3,6 @@ body {
     transition: background 0.3s, color 0.3s;
 }
 
-.header {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    opacity: 1;
-    transition: opacity 1s ease-in-out;
-}
-
 .dark-mode {
     background: #121212;
     color: #f0f0f0;
@@ -105,25 +97,6 @@ input:checked+.slider:before {
     border-radius: 50%;
 }
 
-/* .timeline {
-    position: relative;
-    padding-left: 20px;
-    border-left: 2px solid #00f2fe;
-    border-left: 2px solid #777;
-} */
-
-.timeline-item {
-    margin-bottom: 20px;
-    padding: 10px;
-    background: rgba(0, 242, 254, 0.1);
-    border-radius: 5px;
-}
-
-/* .timeline-date {
-    font-weight: bold;
-    color: #00f2fe;
-    color: #777;
-} */
 
 .timeline-header {
     display: flex;
@@ -250,11 +223,6 @@ a {
     text-decoration: underline;
 }
 
-/* for icons */
-.iico {
-    width: 40px;
-    height: 40px;
-}
 
 /* Base styling for social icons container */
 #dico {
@@ -286,14 +254,6 @@ a {
     background-image: url('assets/socials/x_dark.svg');
 }
 
-/* Instagram icon with theme-specific images */
-.light-mode .ig-icon {
-    background-image: url('assets/socials/ig_light.svg');
-}
-
-.dark-mode .ig-icon {
-    background-image: url('assets/socials/ig_dark.svg');
-}
 
 /* GitHub icon with theme-specific images */
 .light-mode .gh-icon {
@@ -313,23 +273,6 @@ a {
     background-image: url('assets/socials/li_dark.svg');
 }
 
-/* YouTube icon with theme-specific images */
-.light-mode .yt-icon {
-    background-image: url('assets/socials/yt_light.svg');
-}
-
-.dark-mode .yt-icon {
-    background-image: url('assets/socials/yt_dark.svg');
-}
-
-/* Google Scholar icon with theme-specific images */
-.light-mode .gs-icon {
-    background-image: url('assets/socials/gs_light.svg');
-}
-
-.dark-mode .gs-icon {
-    background-image: url('assets/socials/gs_dark.svg');
-}
 
 /* Substack icon with theme-specific images */
 .light-mode .substack-icon {
@@ -353,11 +296,8 @@ a {
 @media screen and (max-width: 768px) {
 
     .x-icon,
-    .ig-icon,
     .gh-icon,
     .li-icon,
-    .yt-icon,
-    .gs-icon,
     .substack-icon,
     .medium-icon {
         width: 24px;
