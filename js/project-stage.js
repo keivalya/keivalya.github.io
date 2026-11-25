@@ -25,9 +25,35 @@
     caption.className = 'project-stage-caption';
     stage.append(media, caption);
     document.body.append(stage);
-    let hovered = null, focused = null, active = null, version = 0, layer = 0, pending = 0;
+    let hovered = null, focused = null, active = null, version = 0, layer = 0, pending = 0, positionFrame = 0;
+    function positionStage() {
+        positionFrame = 0;
+        if (!active || !stage.classList.contains('is-visible')) return;
+        const rect = active.getBoundingClientRect();
+        if (rect.bottom <= 0 || rect.top >= innerHeight) {
+            hovered = focused = null; clear(); return;
+        }
+        const height = stage.offsetHeight;
+        const top = Math.max(16, Math.min(rect.top + rect.height / 2 - height / 2, innerHeight - height - 16));
+        stage.style.top = `${top}px`;
+    }
+    function schedulePosition() {
+        if (active && !positionFrame) positionFrame = requestAnimationFrame(positionStage);
+    }
+    function sizeStage(element) {
+        const width = element.videoWidth || element.naturalWidth || 1;
+        const height = element.videoHeight || element.naturalHeight || 1;
+        const ratio = width / height;
+        const availableWidth = Math.min(340, innerWidth / 2 - 424);
+        const maxHeight = Math.min(420, innerHeight * .55);
+        const displayWidth = Math.min(availableWidth, maxHeight * ratio);
+        stage.style.width = `${displayWidth}px`;
+        media.style.height = `${displayWidth / ratio}px`;
+    }
     function clear() {
         clearTimeout(pending);
+        cancelAnimationFrame(positionFrame);
+        positionFrame = 0;
         version++;
         active?.classList.remove('is-previewed');
         active = null;
@@ -74,7 +100,9 @@
             layer = next;
             caption.textContent = title;
             row.classList.add('is-previewed');
+            sizeStage(incoming);
             stage.classList.add('is-visible');
+            positionStage();
             if (isVideo) incoming.play().catch(() => { /* Keep its first frame if autoplay is blocked. */ });
         };
         if (isVideo) incoming.onloadeddata = reveal;
@@ -84,7 +112,7 @@
     }
     function update(immediate = false) {
         clearTimeout(pending);
-        const row = focused || hovered;
+        const row = hovered || focused;
         if (!row) { clear(); return; }
         if (immediate) show(row);
         else pending = setTimeout(() => show(row), 120);
@@ -98,9 +126,12 @@
             // Passing across a row shouldn't start a media download.
             if (hovered === row && active !== row) { hovered = null; clearTimeout(pending); }
         });
-        row.addEventListener('focusin', () => { focused = row; update(true); });
+        row.addEventListener('focusin', () => { hovered = null; focused = row; update(true); });
         row.addEventListener('focusout', event => {
-            if (!row.contains(event.relatedTarget)) { focused = null; update(); }
+            if (!row.contains(event.relatedTarget)) {
+                focused = rows.find(candidate => candidate.contains(event.relatedTarget)) || null;
+                update(Boolean(focused));
+            }
         });
     });
     new Set(rows.map(row => row.closest('section'))).forEach(section => {
@@ -120,6 +151,10 @@
         });
     });
     new Set(rows.map(row => row.closest('section'))).forEach(section => observer.observe(section));
+    window.addEventListener('scroll', schedulePosition, { passive: true });
+    window.addEventListener('resize', () => {
+        if (active && layers[layer]) { sizeStage(layers[layer]); schedulePosition(); }
+    }, { passive: true });
     document.addEventListener('visibilitychange', () => {
         if (document.hidden) { hovered = focused = null; clear(); }
     });
