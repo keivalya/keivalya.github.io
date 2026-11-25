@@ -1,24 +1,17 @@
 function toggleTheme() {
     const isDark = document.body.classList.toggle('dark-mode');
     document.body.classList.toggle('light-mode', !isDark);
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch (e) { }
 }
 
-// On page load, check for saved theme preference
+// The theme itself is applied by an inline script at the top of <body> (before first paint).
+// Here we only sync the switch and fill in the year.
 document.addEventListener('DOMContentLoaded', function () {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        document.body.classList.add('dark-mode');
-        document.body.classList.remove('light-mode');
-        
-        // Check the checkbox if it exists
-        const checkbox = document.getElementById('checkbox');
-        if (checkbox) {
-            checkbox.checked = true;
-        }
+    const checkbox = document.getElementById('checkbox');
+    if (checkbox) {
+        checkbox.checked = document.body.classList.contains('dark-mode');
     }
 
-    // Set the current year
     const yearElement = document.getElementById("year");
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();

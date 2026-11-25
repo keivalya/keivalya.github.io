@@ -8,30 +8,26 @@
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <meta name="description"
-        content="Keivalya Pandya is an AI researcher and robotics developer passionate about natural language processing for intelligent systems.">
+    <meta name="description" content="Keivalya Pandya builds and evaluates foundation models for robots, from VLAs to world action models. MS Robotics at Northeastern.">
     <meta name="keywords"
-        content="Keivalya Pandya, AI, Robotics, NLP, HRI, Computer Vision, Reinforcement Learning, Perception, Mobile Robotics, Northeastern University, Khoury Research, PARCS Lab">
+        content="Keivalya Pandya, Robotics, Robot Learning, Foundation Models, Vision-Language-Action, VLA, World Action Models, Reinforcement Learning, Human-Robot Interaction, Northeastern University">
     <meta name="author" content="Keivalya Pandya">
+    <link rel="canonical" href="https://keivalya.com/">
     <meta property="og:title" content="Keivalya Pandya">
-    <meta property="og:description"
-        content="AI researcher and robotics developer passionate about natural language processing for intelligent systems.">
-    <meta property="og:image" content="assets/keivalya.jpg">
-    <meta property="og:url" content="https://keivalya.com">
+    <meta property="og:description" content="Keivalya Pandya builds and evaluates foundation models for robots, from VLAs to world action models. MS Robotics at Northeastern.">
+    <meta property="og:image" content="https://keivalya.com/assets/keivalya-og.jpg">
+    <meta property="og:image:alt" content="Keivalya Pandya">
+    <meta property="og:url" content="https://keivalya.com/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Keivalya Pandya">
     <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@keivalya">
-    <meta name="twitter:creator" content="@keivalya">
+    <meta name="twitter:site" content="@keivalyap">
+    <meta name="twitter:creator" content="@keivalyap">
     <meta name="twitter:title" content="Keivalya Pandya">
-    <meta name="twitter:description"
-        content="AI researcher and robotics developer passionate about natural language processing for intelligent systems.">
-    <meta name="twitter:image" content="assets/keivalya.jpg">
+    <meta name="twitter:description" content="Keivalya Pandya builds and evaluates foundation models for robots, from VLAs to world action models. MS Robotics at Northeastern.">
+    <meta name="twitter:image" content="https://keivalya.com/assets/keivalya-og.jpg">
     <meta name="twitter:image:alt" content="Keivalya Pandya">
-    <meta name="twitter:url" content="https://keivalya.com">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Keivalya Pandya">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KB3W913BBC"></script>
     <script>
@@ -47,6 +43,14 @@
 </head>
 
 <body class="light-mode">
+    <script>
+        (function () {
+            var t;
+            try { t = localStorage.getItem('theme'); } catch (e) { }
+            if (!t && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+            if (t === 'dark') document.body.className = 'dark-mode';
+        })();
+    </script>
     <div class="theme-switch-wrapper">
         <label class="theme-switch" for="checkbox">
             <input type="checkbox" id="checkbox" onchange="toggleTheme()" />
@@ -98,8 +102,7 @@
                     <div>
                         <h5><a href="https://robospace.app" target="_blank">RoboSpace App</a> <span
                                 class="tag">1300+ Active Users</span></h5>
-                        <p>Simulate and train robots in your browser! Upload your robot. Pick an environment. Click
-                            train. No setup, no GPUs, no Docker.</p>
+                        <p>Train robots in your browser. No setup, no GPUs, no Docker.</p>
                     </div>
                 </div>
 
@@ -109,9 +112,7 @@
                     <div>
                         <h5><a href="https://github.com/keivalya/mini-vla" target="_blank">mini-VLA</a> <span
                                 class="tag">Popular</span></h5>
-                        <p>A minimal, beginner-friendly <strong>Vision-Language-Action (VLA)</strong> framework showing
-                            how robot policies can fuse images, text, and states to generate actions via diffusion
-                            policies.</p>
+                        <p>A tiny, readable VLA: images and text in, robot actions out.</p>
                     </div>
                 </div>
             </div>
@@ -122,11 +123,11 @@
                 Building and evaluating foundation models for robots, from VLAs to WAMs.
             </p>
             <div class="timeline">
-                <!-- Northeastern University (Fall 2026) -->
+                <!-- Northeastern University -->
                 <div class="timeline-item">
                     <div class="timeline-header">
                         <div class="timeline-info">
-                            <div class="timeline-date">September 2026 - Present</div>
+                            <div class="timeline-date">January 2025 - Present</div>
                             <h5>Northeastern University</h5>
                         </div>
                         <div class="company-logo">
@@ -136,11 +137,21 @@
                     </div>
                     <div class="timeline-content">
                         <div class="position">
-                            <h6>Graduate Teaching Assistant</h6>
-                            <p>CS5180: Reinforcement Learning and Sequential Decision Making, for Fall 2026 taught by
-                                <a href="https://www.khoury.northeastern.edu/people/robert-platt/" target="_blank">Prof
-                                    Robert Platt</a>.
-                            </p>
+                            <h6>Graduate Teaching Assistant <span class="position-date">Spring 2025, Spring 2026, Fall 2026</span></h6>
+                            <p>CS5180: Reinforcement Learning and Sequential Decision Making, with
+                                <a href="https://www.khoury.northeastern.edu/people/robert-platt/" target="_blank">Prof.
+                                    Robert Platt</a> and
+                                <a href="https://www.khoury.northeastern.edu/people/chris-amato/" target="_blank">Prof.
+                                    Chris Amato</a>.</p>
+                        </div>
+                        <div class="position">
+                            <h6>Khoury Research Apprentice <span class="position-date">Spring 2025</span></h6>
+                            <p>Fully-funded <a href="https://www.keivalya.com/cs7675/" target="_blank">Master's research
+                                    on Human-Robot Interaction</a> and Vision-Language-Action modeling at the
+                                <a href="https://www.khoury.northeastern.edu/research-spaces/" target="_blank">People and
+                                    Robot Collaborative Systems (PARCS) Lab</a>, under
+                                <a href="https://www.khoury.northeastern.edu/people/zhi-tan/" target="_blank">Prof. Zhi
+                                    Tan</a>.</p>
                         </div>
                     </div>
                 </div>
@@ -158,34 +169,10 @@
                     <div class="timeline-content">
                         <div class="position">
                             <h6>Robotics Research & Engineering Intern</h6>
-                            <p>Conducting research on bimanual robot manipulation and generalizability of
-                                Vision-Language-Action (VLA) models and World-Action-Models (WAMs). Designing and
-                                training advanced learning architectures (diffusion policies, ACT) and multi-modal
+                            <p>Conducted research on bimanual robot manipulation and generalizability of
+                                Vision-Language-Action (VLA) models and World-Action-Models (WAMs). Designed and
+                                trained advanced learning architectures (diffusion policies, ACT) and multi-modal
                                 policy inference pipelines (RGB, depth, proprioception) for sim-to-real adaptation.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Northeastern University (Spring 2026) -->
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div class="timeline-info">
-                            <div class="timeline-date">January 2026 - April 2026</div>
-                            <h5>Northeastern University</h5>
-                        </div>
-                        <div class="company-logo">
-                            <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/b/bb/NU_RGB_seal_R.png"
-                                alt="Northeastern University Logo">
-                        </div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="position">
-                            <h6>Graduate Teaching Assistant</h6>
-                            <p>CS5180: Reinforcement Learning and Sequential Decision Making, for Spring 2026 taught by
-                                <a href="https://www.khoury.northeastern.edu/people/robert-platt/" target="_blank">Prof
-                                    Robert Platt</a> and <a
-                                    href="https://www.khoury.northeastern.edu/people/chris-amato/" target="_blank">Prof
-                                    Chris Amato</a>.
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -203,7 +190,7 @@
                     <div class="timeline-content">
                         <div class="position">
                             <h6>Reinforcement Learning Intern</h6>
-                            <p>Design, implement, and test learning algorithms to improve autonomous robotic behaviors
+                            <p>Designed, implemented, and tested learning algorithms to improve autonomous robotic behaviors
                                 in real-world environments.</p>
                         </div>
                     </div>
@@ -224,38 +211,6 @@
                             <h6>Graduate Research Assistant</h6>
                             <p>Simulated Human-Robot-Interaction models on NVIDIA Isaac Sim to understand how robots
                                 join human-human conversations.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Northeastern University -->
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div class="timeline-info">
-                            <div class="timeline-date">January 2025 - April 2025</div>
-                            <h5>Northeastern University</h5>
-                        </div>
-                        <div class="company-logo">
-                            <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/b/bb/NU_RGB_seal_R.png"
-                                alt="Northeastern University Logo">
-                        </div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="position">
-                            <h6>Khoury Research Apprentice</h6>
-                            <p>Fully-funded <a href="https://www.keivalya.com/cs7675/" target="_blank">Master's Research
-                                    on Human-Robot Interaction</a> and Vision-Language-Action
-                                Modeling @ <a href="https://www.khoury.northeastern.edu/research-spaces/"
-                                    target="_blank">People and
-                                    Robot Collaborative Systems (PARCS) Lab</a>, under <a
-                                    href="https://www.khoury.northeastern.edu/people/zhi-tan/">Prof. Zhi Tan</a>.</p>
-                        </div>
-                        <div class="position">
-                            <h6>Graduate Teaching Assistant</h6>
-                            <p>CS5180: Reinforcement Learning and Sequential Decision Making, for Spring 2025 taught by
-                                <a href="https://www.khoury.northeastern.edu/people/robert-platt/" target="_blank">Prof
-                                    Robert
-                                    Platt</a>.
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -285,6 +240,28 @@
                         </div>
                     </div>
                 </div>
+                <!-- Indian Space Research Organisation -->
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="timeline-info">
+                            <div class="timeline-date">December 2022 - June 2023</div>
+                            <h5>Indian Space Research Organisation</h5>
+                        </div>
+                        <div class="company-logo">
+                            <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Indian_Space_Research_Organisation_Logo.svg"
+                                alt="ISRO Logo">
+                        </div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="position">
+                            <h6>Researcher</h6>
+                            <p>Developed a Deep Neural Network for automated land-use classification of satellite
+                                images, and urban planning. Engineered a <a
+                                    href="https://www.currentscience.ac.in/Volumes/125/10/1126.pdf">Digital Twin of a
+                                    Thermo-Vacuum Chamber with Quantum Payload</a>.</p>
+                        </div>
+                    </div>
+                </div>
                 <!-- Foundation for Smart Manufacturing -->
                 <div class="timeline-item">
                     <div class="timeline-header">
@@ -307,38 +284,16 @@
                         </div>
                         <div class="position">
                             <h6>Summer 2022 Research Intern</h6>
-                            <p>Implemented an ML model using OpenCV for PCB fault defection. Deployed the model to
+                            <p>Implemented an ML model using OpenCV for PCB fault detection. Deployed the model to
                                 Netlify with a FastAPI interface integrated with YOLOv5 and <a
                                     href="https://ijcsmc.com/docs/papers/December2022/V11I12202213.pdf">published these
                                     results</a>.</p>
                         </div>
                         <div class="position">
                             <h6>Summer 2021 Research Intern</h6>
-                            <p>Research and implement Digital Twin of the Smart Lathe Machine to optimize operations.
+                            <p>Researched and implemented a Digital Twin of the Smart Lathe Machine to optimize operations.
                                 You can read <a href="http://dx.doi.org/10.13140/RG.2.2.31981.87522">the technical
                                     report here</a>.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Indian Space Research Organisation -->
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div class="timeline-info">
-                            <div class="timeline-date">December 2022 - June 2023</div>
-                            <h5>Indian Space Research Organisation</h5>
-                        </div>
-                        <div class="company-logo">
-                            <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Indian_Space_Research_Organisation_Logo.svg"
-                                alt="ISRO Logo">
-                        </div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="position">
-                            <h6>Researcher</h6>
-                            <p>Developed a Deep Neural Network for automated land-use classification of satellite
-                                images, and urban planning. Engineered a <a
-                                    href="https://www.currentscience.ac.in/Volumes/125/10/1126.pdf">Digital Twin of a
-                                    Thermo-Vacuum Chamber with Quantum Payload</a>.</p>
                         </div>
                     </div>
                 </div>
@@ -396,11 +351,55 @@
         </section>
         <section class="mb-4">
             <h2>Projects</h2>
-            <p>Developed autonomous robotics applications, AI-powered customer service chatbots, and machine learning
-                frameworks. <i>You can find most of my open-source projects on my <a href="https://github.com/keivalya"
-                        target="_blank">GitHub profile</a>.</i></p>
+            <p>Things I've built, broken, and fixed. More on <a href="https://github.com/keivalya"
+                    target="_blank">GitHub</a>.</p>
             <div class="row">
 
+                <div class="col-md-12 d-flex align-items-center mb-3">
+                    <img loading="lazy" decoding="async" src="assets/pico-wam.gif" alt="pico-WAM dreamed plan"
+                        class="img-fluid rounded me-3" style="width: 80px; height: 80px; object-fit: cover;">
+                    <div>
+                        <h5><a href="https://www.keivalya.com/pico-wam/">pico-WAM</a> <span class="tag">Research</span></h5>
+                        <p>A compact <strong>World Action Model</strong> for testing how well robots imagine
+                            counterfactual futures and plan with them.</p>
+                    </div>
+                </div>
+                <div class="col-md-12 d-flex align-items-center mb-3">
+                    <img loading="lazy" decoding="async" src="assets/lang-grounding.gif"
+                        alt="LIBERO rollout of a VLA policy" class="img-fluid rounded me-3"
+                        style="width: 80px; height: 80px; object-fit: cover;">
+                    <div>
+                        <h5><a href="https://github.com/keivalya/cs6120" target="_blank">Lost in Instruction: Do VLAs
+                                Actually Listen?</a> <span class="tag">Research</span></h5>
+                        <p>Swapping, scrambling, and paraphrasing instructions for SmolVLA and OpenVLA on LIBERO.
+                            Turns out they track the <strong>object</strong> and mostly ignore the <strong>verb</strong>.</p>
+                    </div>
+                </div>
+                <div class="col-md-12 d-flex align-items-center mb-3">
+                    <img loading="lazy" decoding="async" src="assets/somo.gif" alt="iro, the somo home robot"
+                        class="img-fluid rounded me-3" style="width: 80px; height: 80px; object-fit: cover;">
+                    <div>
+                        <h5><a href="https://somo.keivalya.com/" target="_blank">somo</a></h5>
+                        <p>Meet <strong>iro</strong>, a little home robot with emotional intelligence. Say hi, it
+                            notices you.</p>
+                    </div>
+                </div>
+                <div class="col-md-12 d-flex align-items-center mb-3">
+                    <img loading="lazy" decoding="async" src="assets/franka-ik.gif" alt="Franka Panda tracking a helix"
+                        class="img-fluid rounded me-3" style="width: 80px; height: 80px; object-fit: cover;">
+                    <div>
+                        <h5><a href="https://www.keivalya.com/franka-se3-ik/" target="_blank">7-DoF Franka SE(3) Inverse Kinematics</a></h5>
+                        <p>Making a Franka trace a helix, and using the spare DoF in the <strong>null space</strong> to do it more gracefully.</p>
+                    </div>
+                </div>
+                <div class="col-md-12 d-flex align-items-center mb-3">
+                    <img loading="lazy" decoding="async" src="assets/gripper.gif" alt="Underactuated gripper grasping and twisting a cylinder"
+                        class="img-fluid rounded me-3" style="width: 80px; height: 80px; object-fit: cover;">
+                    <div>
+                        <h5><a href="https://github.com/keivalya/me5250-project-1" target="_blank">Grasp-and-Twist Underactuated Gripper</a></h5>
+                        <p>One motor, four DoFs: a tendon-driven gripper that grabs first, then twists. Contact mechanics do the switching.</p>
+                    </div>
+                </div>
                 <div class="col-md-12 d-flex align-items-center mb-3">
                     <img loading="lazy" decoding="async" src="assets/nemotron-vla.gif" alt="Nemotron-VLA" class="img-fluid rounded me-3"
                         style="width: 80px; height: 80px; object-fit: cover;">
@@ -439,7 +438,7 @@
                                 target="_blank">Robotic
                                 Arm Manipulation with Behavior Cloning</a>
                         </h5>
-                        <p>Enhance robot arm manipulation using human demonstrations and 3-phasesoft-actor-critic.</p>
+                        <p>Enhanced robot arm manipulation using human demonstrations and 3-phase soft actor-critic.</p>
                     </div>
                 </div>
                 <div class="col-md-12 d-flex align-items-center mb-3">
@@ -452,38 +451,43 @@
                         <p>Accurate mapping while reducing particle weight variance to reduce particle depletion.</p>
                     </div>
                 </div>
+                <div class="col-md-12 d-flex align-items-center mb-3">
+                    <img loading="lazy" decoding="async" src="assets/show-me.svg" alt="Show Me app icon"
+                        class="img-fluid rounded me-3" style="width: 80px; height: 80px; object-fit: cover;">
+                    <div>
+                        <h5><a href="https://github.com/keivalya/show-me" target="_blank">Show Me</a> <span class="tag">Google I/O Hackathon</span></h5>
+                        <p>Point your phone at a broken appliance and a <strong>Gemini</strong> coach watches your hands and talks you through the fix.</p>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="mb-4">
             <h2>Publications</h2>
             <ul class="entries">
-                <li class="entry">
-                    <a href="/pico-wam/">pico-WAM: Evaluating Counterfactual Prediction and Planning Error in a Compact World Action Model</a><br>
-                    Keivalya Pandya · arXiv preprint, 2026<br>
-                    <a href="https://arxiv.org/abs/2611.01039">Paper</a> ·
-                    <a href="https://github.com/keivalya/pico-wam">Code</a> ·
-                    <a href="/pico-wam/">Project page</a>
+                <li class="entry pub">
+                    <a href="/pico-wam/" target="_blank">pico-WAM: Evaluating Counterfactual Prediction and Planning Error in a Compact World Action Model</a><br>
+                    <span class="pub-authors"><strong>Keivalya Pandya</strong></span><br>
+                    <span class="pub-venue">arXiv preprint, 2026</span> <span class="sep">&middot;</span> <a href="https://arxiv.org/abs/2611.01039">Paper</a> <span class="sep">&middot;</span> <a href="https://github.com/keivalya/pico-wam">Code</a> <span class="sep">&middot;</span> <a href="/pico-wam/">Project page</a>
                 </li>
-                <li class="entry">
-                    <a href="https://efsupit.ro/images/stories/ianuarie2024/Art6.pdf">A comprehensive overview of
-                        artificial intelligence applications in basketball</a> JPES
-                    2024<br>
-                    Ebenzer Agbozo, Keivalya Pandya, Predrag Jovanovic, Ekaterina Anatolyevna Suvorova
+                <li class="entry pub">
+                    <a href="https://efsupit.ro/images/stories/ianuarie2024/Art6.pdf" target="_blank">A comprehensive overview of artificial intelligence applications in basketball</a><br>
+                    <span class="pub-authors">Ebenzer Agbozo, <strong>Keivalya Pandya</strong>, Predrag Jovanovic, Ekaterina Anatolyevna Suvorova</span><br>
+                    <span class="pub-venue">Journal of Physical Education and Sport (JPES), 2024</span>
                 </li>
-                <li class="entry">
-                    <a href="https://arxiv.org/pdf/2310.05421">Automating Customer Service using LangChain</a><br>
-                    Keivalya Pandya, Mehfuza Holia
+                <li class="entry pub">
+                    <a href="https://arxiv.org/pdf/2310.05421" target="_blank">Automating Customer Service using LangChain</a><br>
+                    <span class="pub-authors"><strong>Keivalya Pandya</strong>, Mehfuza Holia</span><br>
+                    <span class="pub-venue">arXiv preprint, 2023</span>
                 </li>
-                <li class="entry">
-                    <a href="https://www.currentscience.ac.in/Volumes/125/10/1126.pdf">Application of digital twin in
-                        space engineering using AR and IOT technology</a> Current
-                    Sci. 2023<br>
-                    Jai G Singla, Jay Goswami, Keivalya Pandya, Darshankumar K Patel, Vinay J Patel, Mehfuza Holia
+                <li class="entry pub">
+                    <a href="https://www.currentscience.ac.in/Volumes/125/10/1126.pdf" target="_blank">Application of digital twin in space engineering using AR and IoT technology</a><br>
+                    <span class="pub-authors">Jai G Singla, Jay Goswami, <strong>Keivalya Pandya</strong>, Darshankumar K Patel, Vinay J Patel, Mehfuza Holia</span><br>
+                    <span class="pub-venue">Current Science, 2023</span>
                 </li>
-                <li class="entry">
-                    <a href="https://ijcsmc.com/docs/papers/December2022/V11I12202213.pdf">Bare PCB Fault Detection in
-                        Real-time Using YOLOv5</a> IJCSMC 2022<br>
-                    Keivalya Pandya, Devesh Tarasia
+                <li class="entry pub">
+                    <a href="https://ijcsmc.com/docs/papers/December2022/V11I12202213.pdf" target="_blank">Bare PCB Fault Detection in Real-time Using YOLOv5</a><br>
+                    <span class="pub-authors"><strong>Keivalya Pandya</strong>, Devesh Tarasia</span><br>
+                    <span class="pub-venue">IJCSMC, 2022</span>
                 </li>
             </ul>
             <p><i>All publications/patents at <a href="https://scholar.google.com/citations?user=Swvp-1MAAAAJ"
@@ -540,7 +544,7 @@
 
                 <li class="entry">
                     <a href="https://medium.com/@keivalyap/building-vla-models-from-scratch-ii-0180020dbc85">
-                        Building VLA models from scratch — II
+                        Building VLA models from scratch -- II
                     </a><br>
                     Math, Code, Implementation and Design Decisions.
                 </li>

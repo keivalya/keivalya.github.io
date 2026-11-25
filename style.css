@@ -453,3 +453,26 @@ footer p {
     margin-left: calc(var(--bs-gutter-x) * 0.5);
     margin-right: calc(var(--bs-gutter-x) * 0.5);
 }
+
+/* role dates inside a merged timeline entry */
+.position-date {
+    margin-left: 6px;
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--muted);
+}
+
+/* publications */
+.pub-authors {
+    font-size: 0.9rem;
+}
+
+.pub-authors strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.pub-venue {
+    font-size: 0.85rem;
+    font-style: italic;
+}
