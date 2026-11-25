@@ -476,3 +476,89 @@ footer p {
     font-size: 0.85rem;
     font-style: italic;
 }
+
+/* Small finishing details; the original content and column remain intact. */
+.hero h1 { letter-spacing: -0.035em; }
+.hero-bio { text-wrap: pretty; }
+body > .container > section { margin-bottom: 44px !important; }
+section > h2 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+section > h2::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: var(--line);
+}
+a { text-decoration-thickness: 1px; text-underline-offset: 4px; }
+a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 4px;
+}
+.featured-project {
+    border-radius: 6px;
+    transition: border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+.featured-project:focus-within { border-color: var(--link); }
+.entry { transition: border-color 180ms ease; }
+.entry:focus-within { border-left-color: var(--link); }
+@media (hover: hover) and (pointer: fine) {
+    .featured-project:hover {
+        background: var(--surface);
+        border-color: var(--line);
+        box-shadow: 0 4px 16px rgb(0 0 0 / 4%);
+    }
+    .entry:hover { border-left-color: var(--link); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .featured-project, .entry { transition: none; }
+}
+
+/* The page keeps its original width; demonstrations occupy only spare space. */
+.project-stage { display: none; }
+@media (min-width: 1280px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .project-stage {
+        display: block;
+        position: fixed;
+        left: calc(50% + 400px);
+        top: 50%;
+        width: min(340px, calc(50vw - 424px));
+        transform: translateY(-50%);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 180ms ease;
+        z-index: 5;
+    }
+    .project-stage.is-visible { opacity: 1; }
+    .project-stage-media {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1;
+    }
+    .project-stage-media img, .project-stage-media video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        opacity: 0;
+        transform: translateY(5px);
+        transition: opacity 200ms ease, transform 240ms ease;
+    }
+    .project-stage-media .is-current { opacity: 1; transform: translateY(0); }
+    .project-stage-caption {
+        margin-top: 14px;
+        padding-top: 10px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: .8125rem;
+        line-height: 1.5;
+    }
+    section .row > .is-previewed h5 > a {
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 4px;
+    }
+}
