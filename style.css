@@ -1,46 +1,114 @@
+/* ---------- Tokens ---------- */
+body.light-mode {
+    --bg: #fcfcfb;
+    --text: #1f2328;
+    --muted: #6a737d;
+    --line: #e6e6e3;
+    --surface: #f4f4f2;
+    --link: #1a5fb4;
+    --link-hover: #0f3f7a;
+}
+
+body.dark-mode {
+    --bg: #121212;
+    --text: #e8e8e6;
+    --muted: #9aa0a6;
+    --line: #2a2a2a;
+    --surface: #1b1b1b;
+    --link: #7fb2ff;
+    --link-hover: #a9cbff;
+}
+
+/* ---------- Base ---------- */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
     transition: background 0.3s, color 0.3s;
 }
 
-.dark-mode {
-    background: #121212;
-    color: #f0f0f0;
-}
-
-.light-mode {
-    background: #f8f9fa;
-    color: #212529;
-}
-
 .container {
-    max-width: 800px;
+    max-width: 760px;
     margin: 40px auto;
 }
 
-
-.profile-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text);
 }
 
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+h6 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+p {
+    margin-bottom: 0.6rem;
+}
+
+a {
+    color: var(--link);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+section {
+    margin-bottom: 56px;
+    padding: 0;
+    border: 0;
+}
+
+.sep {
+    margin: 0 6px;
+    color: var(--muted);
+    opacity: 0.6;
+}
+
+/* Small, quiet labels (replaces colored badges) */
+.tag {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 1px 8px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    vertical-align: middle;
+}
+
+/* ---------- Theme switch ---------- */
 .theme-switch-wrapper {
     position: absolute;
     top: 20px;
     right: 20px;
-    display: flex;
-    align-items: center;
     z-index: 100;
 }
 
 .theme-switch {
     display: inline-block;
-    height: 26px;
+    height: 22px;
     position: relative;
-    width: 50px;
+    width: 42px;
 }
 
 .theme-switch input {
@@ -48,362 +116,340 @@ body {
 }
 
 .slider {
-    background-color: #ccc;
-    bottom: 0;
-    cursor: pointer;
-    left: 0;
     position: absolute;
-    right: 0;
-    top: 0;
-    transition: .4s;
+    inset: 0;
+    cursor: pointer;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    transition: 0.3s;
 }
 
 .slider:before {
-    background-color: #fff;
-    bottom: 4px;
     content: "☀️";
-    /* Sun emoji */
-    font-size: 14px;
+    position: absolute;
+    left: 2px;
+    top: 1px;
+    width: 18px;
+    height: 18px;
+    font-size: 11px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #f39c12;
-    /* Sun color */
-    height: 18px;
-    left: 4px;
-    position: absolute;
-    transition: .4s;
-    width: 18px;
-}
-
-input:checked+.slider {
-    background-color: #007bff;
+    border-radius: 50%;
+    background: var(--bg);
+    transition: 0.3s;
 }
 
 input:checked+.slider:before {
     content: "🌙";
-    /* Moon emoji */
-    transform: translateX(24px);
-    color: #f1c40f;
-    /* Moon color */
-    background-color: #242B4B;
+    transform: translateX(20px);
 }
 
-.slider.round {
-    border-radius: 34px;
+/* ---------- Hero ---------- */
+.hero {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    margin-bottom: 0;
 }
 
-.slider.round:before {
-    border-radius: 50%;
+.hero-text {
+    flex: 1;
+    min-width: 0;
 }
 
+.hero h1 {
+    font-size: 2.1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+}
+
+.hero-bio,
+.hero-links {
+    font-size: 1.03rem;
+}
+
+.hero-note {
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--muted);
+    cursor: default;
+    user-select: none;
+}
+
+.hero-img {
+    width: 200px;
+    height: 240px;
+    object-fit: cover;
+    flex-shrink: 0;
+    margin-top: 56px;
+    border-radius: 4px;
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .hero-img {
+        width: 160px;
+        height: 190px;
+        margin-top: 0;
+    }
+}
+
+/* ---------- Featured projects ---------- */
+.featured-project {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px;
+    transition: border-color 0.2s;
+}
+
+.featured-project:hover {
+    border-color: var(--muted);
+}
+
+.featured-project p {
+    margin: 0;
+    color: var(--muted);
+}
+
+/* ---------- Timeline (work, education) ---------- */
+.timeline-item {
+    padding: 0 0 22px;
+    margin-bottom: 22px;
+    border-bottom: 1px solid var(--line);
+}
+
+.timeline-item:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+}
 
 .timeline-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 10px;
+    gap: 16px;
+    margin-bottom: 6px;
 }
 
 .timeline-info {
     flex: 1;
 }
 
+.timeline-date {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 2px;
+    font-variant-numeric: tabular-nums;
+}
+
 .company-logo {
-    /* width: 60px; */
-    height: 60px;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 100%;
-}
-
-/* Media query for mobile screens */
-@media screen and (max-width: 768px) {
-    .company-logo {
-        max-width: 60px;
-        /* Maximum width of 70px on mobile screens */
-        width: 100%;
-        /* Allows the logo to scale down proportionally */
-    }
 }
 
 .company-logo img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+    filter: grayscale(1);
+    opacity: 0.7;
+    transition: filter 0.3s, opacity 0.3s;
+}
+
+.timeline-item:hover .company-logo img {
+    filter: none;
+    opacity: 1;
 }
 
 .position {
-    margin-bottom: 15px;
-    padding-left: 10px;
-    border-left: 3px solid rgba(0, 242, 254, 0.5);
+    margin-bottom: 10px;
 }
 
 .position:last-child {
     margin-bottom: 0;
 }
 
-.position h6 {
-    font-weight: 600;
-    margin-bottom: 5px;
+.position p {
+    margin: 0;
+    color: var(--muted);
 }
 
-.timeline-content {
-    padding-top: 5px;
+/* ---------- Projects list ---------- */
+section .row>.d-flex img.rounded {
+    border-radius: 8px !important;
 }
 
-.timeline-item {
-    background: rgba(237, 250, 252, 0.7);
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+/* ---------- Publications / blogs ---------- */
+.entries {
+    list-style: none;
+    padding-left: 0;
 }
 
-.dark-mode .timeline-item {
-    background: rgba(0, 242, 254, 0.1);
+.entry {
+    padding-left: 14px;
+    border-left: 2px solid var(--line);
+    margin-bottom: 14px;
+    color: var(--muted);
 }
 
-.timeline {
-    border-left: 2px solid #00f2fe;
-    padding-left: 20px;
-    position: relative;
+.entry>a:first-child {
+    font-weight: 500;
 }
 
-.timeline-date {
-    font-weight: bold;
-    color: #00f2fe;
-    margin-bottom: 5px;
+/* ---------- Talks ---------- */
+.card {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--bg);
+    box-shadow: none;
+    transition: border-color 0.2s;
 }
 
-/* Light mode timeline-date styling */
-.light-mode .timeline-date {
-    font-weight: bold;
-    color: #00b4bd;
-    /* Slightly darker teal color for light mode */
-    margin-bottom: 5px;
+.card:hover {
+    border-color: var(--muted);
 }
 
-/* Dark mode timeline-date styling */
-.dark-mode .timeline-date {
-    font-weight: bold;
-    color: #00f2fe;
-    /* Original bright teal color for dark mode */
-    margin-bottom: 5px;
+.card-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text);
+    margin: 0;
 }
 
-/* Default link styling */
-a {
-    transition: color 0.3s;
-    text-decoration: none;
+/* ---------- Achievements ---------- */
+.awards {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-/* Light mode link styling */
-.light-mode a {
-    color: #0366d6;
-    /* GitHub-style blue for light mode */
-}
-
-.light-mode a:hover {
-    color: #0056b3;
-    /* Darker blue on hover for light mode */
-    text-decoration: underline;
-}
-
-/* Dark mode link styling */
-.dark-mode a {
-    color: #58a6ff;
-    /* Lighter blue for dark mode for better contrast */
-}
-
-.dark-mode a:hover {
-    color: #79beff;
-    /* Even lighter blue on hover for dark mode */
-    text-decoration: underline;
-}
-
-
-/* Base styling for social icons container */
-#dico {
+.award {
     display: flex;
-    justify-content: center;
-    /* Center icons horizontally */
     align-items: center;
-    /* Center icons vertically */
+    gap: 16px;
+    margin-bottom: 18px;
 }
 
-/* Base styling for the icon */
+.award img {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.award p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* ---------- Social icons (blog header) ---------- */
 .social-icon {
-    width: 40px;
-    height: 40px;
+    width: 22px;
+    height: 22px;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     display: inline-block;
-    margin: 0 2px;
-    /* Add spacing between icons */
+    opacity: 0.7;
 }
 
-/* X icon with theme-specific images */
-.light-mode .x-icon {
-    background-image: url('assets/socials/x_light.svg');
-}
+.light-mode .substack-icon { background-image: url('assets/socials/substack_light.svg'); }
+.dark-mode .substack-icon { background-image: url('assets/socials/substack_dark.svg'); }
+.light-mode .medium-icon { background-image: url('assets/socials/medium_light.svg'); }
+.dark-mode .medium-icon { background-image: url('assets/socials/medium_dark.svg'); }
 
-.dark-mode .x-icon {
-    background-image: url('assets/socials/x_dark.svg');
-}
-
-
-/* GitHub icon with theme-specific images */
-.light-mode .gh-icon {
-    background-image: url('assets/socials/gh_light.svg');
-}
-
-.dark-mode .gh-icon {
-    background-image: url('assets/socials/gh_dark.svg');
-}
-
-/* LinkedIn icon with theme-specific images */
-.light-mode .li-icon {
-    background-image: url('assets/socials/li_light.svg');
-}
-
-.dark-mode .li-icon {
-    background-image: url('assets/socials/li_dark.svg');
-}
-
-
-/* Substack icon with theme-specific images */
-.light-mode .substack-icon {
-    background-image: url('assets/socials/substack_light.svg');
-}
-
-.dark-mode .substack-icon {
-    background-image: url('assets/socials/substack_dark.svg');
-}
-
-/* Medium icon with theme-specific images */
-.light-mode .medium-icon {
-    background-image: url('assets/socials/medium_light.svg');
-}
-
-.dark-mode .medium-icon {
-    background-image: url('assets/socials/medium_dark.svg');
-}
-
-/* Media query for mobile screens */
-@media screen and (max-width: 768px) {
-
-    .x-icon,
-    .gh-icon,
-    .li-icon,
-    .substack-icon,
-    .medium-icon {
-        width: 24px;
-        /* Reduced width */
-        height: 24px;
-        /* Reduced height */
-        background-size: contain;
-        /* Ensure the icon fits within the new dimensions */
-    }
-}
-
-.bio-text {
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.05);
-    border-radius: 8px;
-}
-
-section {
-    margin-bottom: 30px;
-    /* Adjust spacing as needed */
-    padding-bottom: 30px;
-    /* Optional: Adds more separation */
-    border-bottom: 1px solid #ddd;
-    /* Optional: Light separator for clarity */
-}
-
+/* ---------- Footer ---------- */
 footer {
-    background-color: #f8f9fa;
-    padding: 15px;
-    font-size: 14px;
-    text-align: center;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-/* Light mode footer */
-.light-mode footer {
-    background-color: #f8f9fa;
-    color: #212529;
-}
-
-/* Dark mode footer */
-.dark-mode footer {
-    background-color: #1a1a1a;
-    color: #f0f0f0;
-}
-
-/* Card Styling */
-.card {
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-/* Light mode card */
-.light-mode .card {
-    background: #ffffff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Dark mode card */
-.dark-mode .card {
-    background: #242424;
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
-    color: #f0f0f0;
-}
-
-/* Hover effect */
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 242, 254, 0.3);
-}
-
-/* Card Title */
-.card-title {
-    font-size: 16px;
-    font-weight: bold;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 24px 12px 40px;
+    border-top: 1px solid var(--line);
+    font-size: 0.85rem;
+    color: var(--muted);
     text-align: center;
 }
 
-/* Image styling */
-.card-img-top {
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+footer p {
+    margin: 0;
 }
 
-/* Featured Project Styling */
-.featured-project {
-    border: 2px solid #00f2fe;
-    background-color: rgba(0, 242, 254, 0.05);
-    border-radius: 12px;
-    padding: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.footer-hint {
+    margin-top: 6px !important;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    opacity: 0.25;
+    user-select: none;
 }
 
-.featured-project:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 242, 254, 0.2);
+/* ---------- Easter eggs ---------- */
+.egg-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 28px;
+    transform: translate(-50%, 12px);
+    max-width: calc(100% - 32px);
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    color: var(--bg);
+    background: var(--text);
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.25s, transform 0.25s;
+    pointer-events: none;
+    z-index: 1000;
 }
 
-.dark-mode .featured-project {
-    background-color: rgba(0, 242, 254, 0.1);
-    border-color: #00f2fe;
+.egg-toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
 }
 
-.light-mode .featured-project {
-    background-color: #f0fbff;
-    border-color: #00b4bd;
-    /* Darker teal for light mode */
+.egg-robot {
+    position: fixed;
+    bottom: 8px;
+    left: -60px;
+    font-size: 32px;
+    z-index: 999;
+    pointer-events: none;
+    animation: egg-roll 4s linear forwards;
+}
+
+@keyframes egg-roll {
+    to { transform: translateX(calc(100vw + 120px)); }
+}
+
+.egg-wiggle {
+    animation: egg-wiggle 0.5s ease;
+}
+
+@keyframes egg-wiggle {
+    25% { transform: rotate(-3deg); }
+    75% { transform: rotate(3deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .egg-robot, .egg-wiggle { animation: none; }
+    .egg-robot { display: none; }
+}
+
+/* keep bordered cards inside the text column (Bootstrap rows have negative gutters) */
+.row>.featured-project {
+    width: calc(100% - var(--bs-gutter-x));
+    margin-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-right: calc(var(--bs-gutter-x) * 0.5);
 }

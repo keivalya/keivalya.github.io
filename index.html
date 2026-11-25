@@ -43,6 +43,7 @@
     </script>
     <script src="js/headline.js"></script>
     <script src="js/toggle-theme.js"></script>
+    <script src="js/eggs.js" defer></script>
 </head>
 
 <body class="light-mode">
@@ -52,43 +53,61 @@
             <div class="slider round"></div>
         </label>
     </div>
-    <header class="text-center py-4">
-        <img src="assets/keivalya.jpg" alt="Keivalya Pandya" class="profile-img">
-        <h1>Keivalya Pandya</h1>
-        <p class="bio-text" id="bio-text">I build robots so they work, and I play! 🤖🧠🦾</p>
-        <div id="dico">
-            <a href="https://github.com/keivalya" target="_blank">
-                <div class="social-icon gh-icon" aria-label="GitHub logo"></div>
-            </a>
-            <a href="https://linkedin.com/in/keivalya" target="_blank">
-                <div class="social-icon li-icon" aria-label="LinkedIn logo"></div>
-            </a>
-            <a href="https://x.com/keivalyap" target="_blank">
-                <div class="social-icon x-icon" aria-label="X logo"></div>
-            </a>
+    <header class="hero container">
+        <div class="hero-text">
+            <h1>Keivalya Pandya</h1>
+            <p class="hero-bio">
+                Hey! I'm Keivalya, a Robotics Master's student at
+                <a href="https://www.khoury.northeastern.edu/" target="_blank">Northeastern</a>. I work on understanding,
+                building, and evaluating foundation models for robots, and I'm especially curious about what makes
+                generalist robot policies <em>actually</em> generalize. I interned at
+                <a href="https://www.gm.com/" target="_blank">GM</a> with
+                <a href="https://toghi.net/" target="_blank">Behrad Toghi</a> on bimanual VLAs and WAMs, did RL at
+                <a href="https://www.familiarmachines.com/" target="_blank">Familiar Machines &amp; Magic</a>, and TA
+                the RL course with
+                <a href="https://www.khoury.northeastern.edu/people/robert-platt/" target="_blank">Rob Platt</a> and
+                <a href="https://www.khoury.northeastern.edu/people/chris-amato/" target="_blank">Chris Amato</a>.
+                I also built <a href="https://github.com/keivalya/mini-vla" target="_blank">mini-VLA</a>, a tiny
+                readable VLA, and <a href="pico-wam/">pico-WAM</a>, on counterfactual planning in WAMs.
+            </p>
+            <p class="hero-links">
+                <a href="https://github.com/keivalya" target="_blank">GitHub</a>
+                <span class="sep">&middot;</span>
+                <a href="https://linkedin.com/in/keivalya" target="_blank">LinkedIn</a>
+                <span class="sep">&middot;</span>
+                <a href="https://x.com/keivalyap" target="_blank">X</a>
+                <span class="sep">&middot;</span>
+                <a href="https://scholar.google.com/citations?user=Swvp-1MAAAAJ" target="_blank">Google Scholar</a>
+                <span class="sep">&middot;</span>
+                <a href="resume.pdf" target="_blank">Resume</a>
+                <span class="sep">&middot;</span>
+                <a href="mailto:keivalyapandya@gmail.com">Email</a>
+            </p>
+            <p class="hero-note" id="bio-text">I build robots so they work, and I play! 🤖🧠🦾</p>
         </div>
+        <img src="assets/keivalya-hero.jpg" alt="Keivalya Pandya" class="hero-img" width="200" height="240" fetchpriority="high">
     </header>
     <div class="container">
         <section class="mb-4">
             <h2>Featured Projects & Apps</h2>
             <div class="row">
                 <div class="col-md-12 d-flex align-items-center mb-4 featured-project">
-                    <img src="assets/robospace.png" alt="RoboSpace App" class="img-fluid rounded me-3"
+                    <img loading="lazy" decoding="async" src="assets/robospace.png" alt="RoboSpace App" class="img-fluid rounded me-3"
                         style="width: 100px; height: 100px; object-fit: cover;">
                     <div>
                         <h5><a href="https://robospace.app" target="_blank">RoboSpace App</a> <span
-                                class="badge bg-success ms-2">1300+ Active Users</span></h5>
+                                class="tag">1300+ Active Users</span></h5>
                         <p>Simulate and train robots in your browser! Upload your robot. Pick an environment. Click
                             train. No setup, no GPUs, no Docker.</p>
                     </div>
                 </div>
 
                 <div class="col-md-12 d-flex align-items-center mb-4 featured-project">
-                    <img src="assets/mini-vla.gif" alt="mini-VLA" class="img-fluid rounded me-3"
+                    <img loading="lazy" decoding="async" src="assets/mini-vla.gif" alt="mini-VLA" class="img-fluid rounded me-3"
                         style="width: 100px; height: 100px; object-fit: cover;">
                     <div>
                         <h5><a href="https://github.com/keivalya/mini-vla" target="_blank">mini-VLA</a> <span
-                                class="badge bg-primary ms-2">Popular</span></h5>
+                                class="tag">Popular</span></h5>
                         <p>A minimal, beginner-friendly <strong>Vision-Language-Action (VLA)</strong> framework showing
                             how robot policies can fuse images, text, and states to generate actions via diffusion
                             policies.</p>
@@ -110,7 +129,7 @@
                             <h5>Northeastern University</h5>
                         </div>
                         <div class="company-logo">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/NU_RGB_seal_R.png"
+                            <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/b/bb/NU_RGB_seal_R.png"
                                 alt="Northeastern University Logo">
                         </div>
                     </div>
@@ -132,7 +151,7 @@
                             <h5>General Motors (GM)</h5>
                         </div>
                         <div class="company-logo">
-                            <img src="assets/gm.png" alt="GM Logo">
+                            <img loading="lazy" decoding="async" src="assets/gm.png" alt="GM Logo">
                         </div>
                     </div>
                     <div class="timeline-content">
@@ -153,7 +172,7 @@
                             <h5>Northeastern University</h5>
                         </div>
                         <div class="company-logo">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/NU_RGB_seal_R.png"
+                            <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/b/bb/NU_RGB_seal_R.png"
                                 alt="Northeastern University Logo">
                         </div>
                     </div>
@@ -177,7 +196,7 @@
                             <h5>Familiar Machines & Magic</h5>
                         </div>
                         <div class="company-logo">
-                            <img src="assets/fmm_logo.jpeg" alt="FMM Logo">
+                            <img loading="lazy" decoding="async" src="assets/fmm_logo.jpeg" alt="FMM Logo">
                         </div>
                     </div>
                     <div class="timeline-content">
@@ -196,7 +215,7 @@
                             <h5>PARCS Lab @ Khoury College of CS</h5>
                         </div>
                         <div class="company-logo">
-                            <img src="assets/khoury.png" alt="PARCS Lab Logo">
+                            <img loading="lazy" decoding="async" src="assets/khoury.png" alt="PARCS Lab Logo">
                         </div>
                     </div>
                     <div class="timeline-content">
@@ -215,7 +234,7 @@
                             <h5>Northeastern University</h5>
                         </div>
                         <div class="company-logo">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/NU_RGB_seal_R.png"
+                            <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/b/bb/NU_RGB_seal_R.png"
                                 alt="Northeastern University Logo">
                         </div>
                     </div>
@@ -247,7 +266,7 @@
                             <h5>Birla Vishvakarma Mahavidyalaya</h5>
                         </div>
                         <div class="company-logo">
-                            <img src="https://upload.wikimedia.org/wikipedia/en/2/2c/Birla_Vishvakarma_Mahavidyalaya_logo.png"
+                            <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/en/2/2c/Birla_Vishvakarma_Mahavidyalaya_logo.png"
                                 alt="BVM Logo">
                         </div>
                     </div>
@@ -274,7 +293,7 @@
                                 Industry Association</h5>
                         </div>
                         <div class="company-logo">
-                            <img src="assets/fsm.png" alt="Tesla Logo">
+                            <img loading="lazy" decoding="async" src="assets/fsm.png" alt="Tesla Logo">
                         </div>
                     </div>
                     <div class="timeline-content">
@@ -308,7 +327,7 @@
                             <h5>Indian Space Research Organisation</h5>
                         </div>
                         <div class="company-logo">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Indian_Space_Research_Organisation_Logo.svg"
+                            <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Indian_Space_Research_Organisation_Logo.svg"
                                 alt="ISRO Logo">
                         </div>
                     </div>
@@ -336,7 +355,7 @@
                             <h5>Khoury College of Computer Sciences</h5>
                         </div>
                         <div class="company-logo">
-                            <img src="assets/khoury.png" alt="Khoury College of Computer Science Logo">
+                            <img loading="lazy" decoding="async" src="assets/khoury.png" alt="Khoury College of Computer Science Logo">
                         </div>
                     </div>
                     <div class="timeline-content">
@@ -357,7 +376,7 @@
                             <h5>Birla Vishvakarma Mahavidyalaya</h5>
                         </div>
                         <div class="company-logo">
-                            <img src="https://upload.wikimedia.org/wikipedia/en/2/2c/Birla_Vishvakarma_Mahavidyalaya_logo.png"
+                            <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/en/2/2c/Birla_Vishvakarma_Mahavidyalaya_logo.png"
                                 alt="BVM Logo">
                         </div>
                     </div>
@@ -382,7 +401,7 @@
             <div class="row">
 
                 <div class="col-md-12 d-flex align-items-center mb-3">
-                    <img src="assets/nemotron-vla.gif" alt="Nemotron-VLA" class="img-fluid rounded me-3"
+                    <img loading="lazy" decoding="async" src="assets/nemotron-vla.gif" alt="Nemotron-VLA" class="img-fluid rounded me-3"
                         style="width: 80px; height: 80px; object-fit: cover;">
                     <div>
                         <h5><a href="https://github.com/keivalya/nemotron-vla" target="_blank">Nemotron-VLA</a></h5>
@@ -391,17 +410,17 @@
                     </div>
                 </div>
                 <div class="col-md-12 d-flex align-items-center mb-3">
-                    <img src="assets/cs5180-rl.png" alt="CS5180-RL" class="img-fluid rounded me-3"
+                    <img loading="lazy" decoding="async" src="assets/cs5180-rl.png" alt="CS5180-RL" class="img-fluid rounded me-3"
                         style="width: 80px; height: 80px; object-fit: cover;">
                     <div>
                         <h5><a href="https://github.com/keivalya/cs5180-rl" target="_blank">CS5180-RL</a> <span
-                                class="badge bg-info ms-2">Educational</span></h5>
+                                class="tag">Educational</span></h5>
                         <p>Interactive tools to learn <strong>Reinforcement Learning</strong> concepts from the Sutton &
                             Barto textbook. Developed as a TA for CS5180/4180 at Northeastern University.</p>
                     </div>
                 </div>
                 <div class="col-md-12 d-flex align-items-center mb-3">
-                    <img src="assets/stretch3.gif" alt="RBPF improved" class="img-fluid rounded me-3"
+                    <img loading="lazy" decoding="async" src="assets/stretch3.gif" alt="RBPF improved" class="img-fluid rounded me-3"
                         style="width: 80px; height: 80px;">
                     <div>
                         <h5><a href="https://github.com/keivalya/cs7675" target="_blank">Dexterous Manipulation using
@@ -412,7 +431,7 @@
                     </div>
                 </div>
                 <div class="col-md-12 d-flex align-items-center mb-3">
-                    <img src="assets/arm-man-3-sac.gif" alt="Robotic Arm Manipulation with Behavior Cloning"
+                    <img loading="lazy" decoding="async" src="assets/arm-man-3-sac.gif" alt="Robotic Arm Manipulation with Behavior Cloning"
                         class="img-fluid rounded me-3" style="width: 80px; height: 80px;">
                     <div>
                         <h5><a href="https://keivalya.github.io/arm-manipulation-behavior-cloning/"
@@ -423,7 +442,7 @@
                     </div>
                 </div>
                 <div class="col-md-12 d-flex align-items-center mb-3">
-                    <img src="assets/rbpf.png" alt="RBPF improved" class="img-fluid rounded me-3"
+                    <img loading="lazy" decoding="async" src="assets/rbpf.png" alt="RBPF improved" class="img-fluid rounded me-3"
                         style="width: 80px; height: 80px;">
                     <div>
                         <h5><a href="https://keivalya.github.io/rbpf-adaptive/" target="_blank">Offline
@@ -436,39 +455,38 @@
         </section>
         <section class="mb-4">
             <h2>Publications</h2>
-            <ul class="publications-list" style="list-style: none; padding-left: 0;">
-                <li style="padding-left: 20px; border-left: 3px solid #ccc; margin-bottom: 15px;">
+            <ul class="entries">
+                <li class="entry">
                     <a href="/pico-wam/">pico-WAM: Evaluating Counterfactual Prediction and Planning Error in a Compact World Action Model</a><br>
                     Keivalya Pandya · arXiv preprint, 2026<br>
                     <a href="https://arxiv.org/abs/2611.01039">Paper</a> ·
                     <a href="https://github.com/keivalya/pico-wam">Code</a> ·
                     <a href="/pico-wam/">Project page</a>
                 </li>
-                <li style="padding-left: 20px; border-left: 3px solid #ccc; margin-bottom: 15px;">
+                <li class="entry">
                     <a href="https://efsupit.ro/images/stories/ianuarie2024/Art6.pdf">A comprehensive overview of
                         artificial intelligence applications in basketball</a> JPES
                     2024<br>
                     Ebenzer Agbozo, Keivalya Pandya, Predrag Jovanovic, Ekaterina Anatolyevna Suvorova
                 </li>
-                <li style="padding-left: 20px; border-left: 3px solid #ccc; margin-bottom: 15px;">
+                <li class="entry">
                     <a href="https://arxiv.org/pdf/2310.05421">Automating Customer Service using LangChain</a><br>
                     Keivalya Pandya, Mehfuza Holia
                 </li>
-                <li style="padding-left: 20px; border-left: 3px solid #ccc; margin-bottom: 15px;">
+                <li class="entry">
                     <a href="https://www.currentscience.ac.in/Volumes/125/10/1126.pdf">Application of digital twin in
                         space engineering using AR and IOT technology</a> Current
                     Sci. 2023<br>
                     Jai G Singla, Jay Goswami, Keivalya Pandya, Darshankumar K Patel, Vinay J Patel, Mehfuza Holia
                 </li>
-                <li style="padding-left: 20px; border-left: 3px solid #ccc; margin-bottom: 15px;">
+                <li class="entry">
                     <a href="https://ijcsmc.com/docs/papers/December2022/V11I12202213.pdf">Bare PCB Fault Detection in
                         Real-time Using YOLOv5</a> IJCSMC 2022<br>
                     Keivalya Pandya, Devesh Tarasia
                 </li>
             </ul>
             <p><i>All publications/patents at <a href="https://scholar.google.com/citations?user=Swvp-1MAAAAJ"
-                        target="_blank">🎓 Google
-                        Scholar</a>.</i></p>
+                        target="_blank">Google Scholar</a>.</i></p>
         </section>
         <section>
             <h2>Talks</h2>
@@ -477,7 +495,7 @@
                 <div class="col-md-3 mb-4">
                     <a href="https://youtu.be/pvDL-bTFKvE" target="_blank">
                         <div class="card h-100">
-                            <img src="assets/surviving-eng.jpg" class="card-img-top" alt="GPU Mode 2024">
+                            <img loading="lazy" decoding="async" src="assets/surviving-eng.jpg" class="card-img-top" alt="GPU Mode 2024">
                             <div class="card-body">
                                 <h5 class="card-title">Surviving Engineering with Keivalya</h5>
                             </div>
@@ -487,7 +505,7 @@
                 <div class="col-md-3 mb-4">
                     <a href="https://youtu.be/mq1eXA9PMJY" target="_blank">
                         <div class="card h-100">
-                            <img src="assets/how-robo.jpg" class="card-img-top" alt="No Priors podcast">
+                            <img loading="lazy" decoding="async" src="assets/how-robo.jpg" class="card-img-top" alt="No Priors podcast">
                             <div class="card-body">
                                 <h5 class="card-title">How I made it into Robotics & AI</h5>
                             </div>
@@ -501,17 +519,17 @@
                 <h2 class="mb-0 me-3">Blogs</h2>
                 <a href="https://substack.com/@keivalya" target="_blank" class="me-2">
                     <div class="social-icon substack-icon" aria-label="Substack logo"
-                        style="width: 30px; height: 30px;"></div>
+                       ></div>
                 </a>
                 <a href="https://medium.com/@keivalyap" target="_blank">
-                    <div class="social-icon medium-icon" aria-label="Medium logo" style="width: 30px; height: 30px;">
+                    <div class="social-icon medium-icon" aria-label="Medium logo">
                     </div>
                 </a>
             </div>
             <p>Writings on AI, robotics, and technology.</p>
-            <ul style="list-style: none; padding-left: 0;">
+            <ul class="entries">
                 <!-- VLA -->
-                <li style="padding-left: 20px; border-left: 3px solid #ccc; margin-bottom: 15px;">
+                <li class="entry">
                     <a
                         href="https://open.substack.com/pub/keivalya/p/building-vision-language-action-from?utm_campaign=post-expanded-share&utm_medium=web">
                         Building Vision-Language-Action Model from scratch (Basics)
@@ -519,14 +537,14 @@
                     Understand what are VLAs? How to build VLAs from scratch?!
                 </li>
 
-                <li style="padding-left: 20px; border-left: 3px solid #ccc; margin-bottom: 15px;">
+                <li class="entry">
                     <a href="https://medium.com/@keivalyap/building-vla-models-from-scratch-ii-0180020dbc85">
                         Building VLA models from scratch — II
                     </a><br>
                     Math, Code, Implementation and Design Decisions.
                 </li>
 
-                <li style="padding-left: 20px; border-left: 3px solid #ccc; margin-bottom: 15px;">
+                <li class="entry">
                     <a href="https://medium.com/@keivalyap/mini-vla-with-vision-encoders-f9ba8d8d2988">
                         Upgrading mini-VLA with CLIP/SigLIP vision encoders
                     </a><br>
@@ -535,7 +553,7 @@
 
 
                 <!-- ROS2 -->
-                <li style="padding-left: 20px; border-left: 3px solid #ccc; margin-bottom: 15px;">
+                <li class="entry">
                     <a
                         href="https://evening-carriage-281.notion.site/7b4a971e7696409da6996d54810db4ac?v=65802b79298f4778a52b4df2acb94436">ROS2
                         Kwiki</a><br>
@@ -546,125 +564,66 @@
         </section>
         <section class="mb-4">
             <h2>Achievements</h2>
-            <p>Contributions in robotics, AI, and ML, with
-                impactful projects and research.</p>
-            <div class="row">
-                <div class="col-md-12 d-flex flex-column flex-md-row align-items-center mb-4">
-                    <img src="assets/achievements/urfu.jpg" alt="Best Project Award - Ural Federal University"
-                        class="img-fluid rounded-3 me-4" style="width: 80%; max-width: 300px;">
+            <ul class="awards">
+                <li class="award">
+                    <img src="assets/achievements/urfu.jpg" alt="Best Project Award - Ural Federal University" loading="lazy" decoding="async">
                     <div>
-                        <h5><strong><a
-                                    href="https://drive.google.com/file/d/1j_tU7cXZXltu8sru42WtBnHZqCYznmia/view?usp=drive_link">Best
-                                    Project Award</a></strong></h5>
-                        <p><i>Ural Federal University, Ekaterinburg, Russia</i>
-                            <br><em>Overall and International Category</em>
-                        </p>
+                        <h5><a href="https://drive.google.com/file/d/1j_tU7cXZXltu8sru42WtBnHZqCYznmia/view?usp=drive_link" target="_blank">Best Project Award</a></h5>
+                        <p>Ural Federal University, Ekaterinburg, Russia · Overall and International Category</p>
                     </div>
-                </div>
-                <br>
-                <div class="col-md-12 d-flex flex-column flex-md-row align-items-center mb-4">
-                    <img src="assets/achievements/mudra.gif" alt="First Place Overall - MakeUC 2021"
-                        class="img-fluid rounded-3 me-4" style="width: 80%; max-width: 300px;">
+                </li>
+                <li class="award">
+                    <img src="assets/achievements/mudra.gif" alt="First Place Overall - MakeUC 2021" loading="lazy" decoding="async">
                     <div>
-                        <a href="https://devpost.com/software/mudra-zeo1qw">
-                            <h5><strong>First Place Overall</strong></h5>
-                            <p><strong>+ Wolfram Award + Best Social Hack</strong></p>
-                        </a>
-                        <p><i>MakeUC 2021, by IEEE @ University of Cincinnati, USA</i></p>
+                        <h5><a href="https://devpost.com/software/mudra-zeo1qw" target="_blank">First Place Overall, Wolfram Award &amp; Best Social Hack</a></h5>
+                        <p>MakeUC 2021, by IEEE @ University of Cincinnati, USA</p>
                     </div>
-                </div>
-                <br>
-                <div class="col-md-12 d-flex flex-column flex-md-row align-items-center mb-4">
-                    <img src="assets/achievements/robofest.jpg" alt="Winner of ROBOFEST 2.0"
-                        class="img-fluid rounded-3 me-md-4 mb-3 mb-md-0" style="width: 80%; max-width: 300px;">
+                </li>
+                <li class="award">
+                    <img src="assets/achievements/robofest.jpg" alt="Winner of ROBOFEST 2.0" loading="lazy" decoding="async">
                     <div>
-                        <a href="https://www.youtube.com/watch?v=sRTgbTMgue0">
-                            <h5><strong>Winner of ROBOFEST 2.0</strong></h5>
-                        </a>
-                        <p><i>GUJCOST & DST, India</i><br>
-                            <em>Winner in <strong>Prosthetic Limb with Remote Sensors</strong></em>
-                        </p>
+                        <h5><a href="https://www.youtube.com/watch?v=sRTgbTMgue0" target="_blank">Winner of ROBOFEST 2.0</a></h5>
+                        <p>GUJCOST &amp; DST, India · Prosthetic Limb with Remote Sensors</p>
                     </div>
-                </div>
-                <br>
-                <div class="col-md-12 d-flex flex-column flex-md-row align-items-center mb-4">
-                    <img src="assets/achievements/robocon22.gif" alt="Abdul Kalam Award"
-                        class="img-fluid rounded-3 me-md-4 mb-3 mb-md-0" style="width: 80%; max-width: 300px;">
+                </li>
+                <li class="award">
+                    <img src="assets/achievements/robocon22.gif" alt="Abdul Kalam Award" loading="lazy" decoding="async">
                     <div>
-                        <a href="https://www.youtube.com/live/yW7tjc2P8O0?feature=share&t=14195">
-                            <h5><strong>Abdul Kalam Award</strong></h5>
-                        </a>
-                        <p><i>Winner of the <strong>Best New Team</strong> Award.</i>
-                            <br><em>Featured on National TV DoorDarshan Channel.</em>
-                        </p>
+                        <h5><a href="https://www.youtube.com/live/yW7tjc2P8O0?feature=share&amp;t=14195" target="_blank">Abdul Kalam Award</a></h5>
+                        <p>Best New Team at DD ROBOCON 2022 · Featured on national TV (DoorDarshan)</p>
                     </div>
-                </div>
-                <div class="col-md-12 d-flex flex-column flex-md-row align-items-center mb-4">
-                    <img src="assets/achievements/scouts.jpg" alt="Rajya Puraskar Recipient"
-                        class="img-fluid rounded-3 me-md-4 mb-3 mb-md-0" style="width: 80%; max-width: 300px;">
+                </li>
+                <li class="award">
+                    <img src="assets/achievements/gaurav23.jpg" alt="Gaurav Puraskar" loading="lazy" decoding="async">
                     <div>
-                        <a href="https://drive.google.com/file/d/1wXGn0k4IuBGn4VehY4IJRKesNN9X86HM/view?usp=drive_link">
-                            <h5><strong>Rajya Puraskar Recipient</strong></h5>
-                        </a>
-                        <p><i>Bharat <strong>Scouts and Guides</strong> Organisation</i>
-                            <br><em>by former <strong>Governor</strong>, late <strong>Om Prakash Kohli</strong></em>
-                        </p>
+                        <h5><a href="https://www.linkedin.com/posts/keivalya_03032023-another-added-to-the-collection-activity-7037821136176394240-7xY1" target="_blank">Gaurav Puraskar, <em>twice</em></a></h5>
+                        <p>Highest civilian award for distinguished students of Vallabh Vidyanagar, Gujarat · 2022 (MakeUC 2021) and 2023 (ROBOFEST 2.0 &amp; DD ROBOCON 2022)</p>
                     </div>
-                </div>
-                <br>
-                <div class="col-12 text-center mb-4">
-                    <a
-                        href="https://www.linkedin.com/posts/keivalya_03032023-another-added-to-the-collection-activity-7037821136176394240-7xY1">
-                        <h3><strong>Gaurav Puraskar Recipient, <i>twice</i></strong></h3>
-                    </a>
-                    <p>Highest Civilian Award presented to the most distinguished students of Vallabh Vidyanagar,
-                        Gujarat</p>
-                </div>
-                <div class="row d-flex flex-column flex-md-row align-items-center mb-4">
-                    <div class="col-md-6 text-center">
-                        <div class="image-container" style="height: 200px; overflow: hidden;">
-                            <img src="assets/achievements/gaurav23.jpg" alt="Gaurav Puraskar 2023"
-                                class="img-fluid rounded-3 mb-3" style="width: 80%; height: 100%; object-fit: cover;">
-                        </div>
-                        <a href="#">
-                            <h5><strong>Gaurav Puraskar 2023</strong></h5>
-                        </a>
-                        <p><i>Winning at National Level<br>(ROBOFEST 2.0 & DD ROBOCON 2022)</i></p>
-                    </div>
-                    <div class="col-md-6 text-center">
-                        <div class="image-container" style="height: 200px; overflow: hidden;">
-                            <img src="assets/achievements/gaurav22.jpg" alt="Gaurav Puraskar 2022"
-                                class="img-fluid rounded-3 mb-3" style="width: 80%; height: 100%; object-fit: cover;">
-                        </div>
-                        <a href="#">
-                            <h5><strong>Gaurav Puraskar 2022</strong></h5>
-                        </a>
-                        <p><i>Winning at the international level<br>(MakeUC 2021)</i></p>
-                    </div>
-                </div>
-                <br>
-                <div class="col-md-12 d-flex flex-column flex-md-row align-items-center mb-4">
-                    <img src="assets/achievements/khoj.jpg" alt="Khoj certificate"
-                        class="img-fluid rounded-3 me-md-4 mb-3 mb-md-0" style="width: 80%; max-width: 300px;">
+                </li>
+                <li class="award">
+                    <img src="assets/achievements/scouts.jpg" alt="Rajya Puraskar Recipient" loading="lazy" decoding="async">
                     <div>
-                        <a href="#">
-                            <h5><strong>2nd Runner Up</strong></h5>
-                        </a>
-                        <p><i>@ Khoj 2020</i></p>
-                        <p><em>Learnt to play Flute (aka Bansuri)</em></p>
+                        <h5><a href="https://drive.google.com/file/d/1wXGn0k4IuBGn4VehY4IJRKesNN9X86HM/view?usp=drive_link" target="_blank">Rajya Puraskar Recipient</a></h5>
+                        <p>Bharat Scouts and Guides · Presented by former Governor, late Om Prakash Kohli</p>
                     </div>
-                </div>
-            </div>
+                </li>
+                <li class="award">
+                    <img src="assets/achievements/khoj.jpg" alt="Khoj certificate" loading="lazy" decoding="async">
+                    <div>
+                        <h5>2nd Runner Up, Khoj 2020</h5>
+                        <p>Learnt to play the flute (aka bansuri)</p>
+                    </div>
+                </li>
+            </ul>
         </section>
     </div>
-    <footer class="text-center py-3">
-        <p>&copy; <span id="year"></span> Keivalya Pandya. All rights reserved.</p>
-        <p>
-            <a href="mailto:keivalyapandya@gmail.com">Contact</a> |
-            <a href="https://github.com/keivalya" target="_blank">GitHub</a> |
-            <a href="https://www.linkedin.com/in/keivalya" target="_blank">LinkedIn</a> |
-            <a href="https://instagram.com/keivalya" target="_blank">Instagram</a>
+    <footer>
+        <p>&copy; <span id="year"></span> Keivalya Pandya
+            <span class="sep">&middot;</span> <a href="https://github.com/keivalya" target="_blank">GitHub</a>
+            <span class="sep">&middot;</span> <a href="https://www.linkedin.com/in/keivalya" target="_blank">LinkedIn</a>
+            <span class="sep">&middot;</span> <a href="https://instagram.com/keivalya" target="_blank">Instagram</a>
         </p>
+        <p class="footer-hint" title="a classic">&uarr;&uarr;&darr;&darr;&larr;&rarr;&larr;&rarr;</p>
     </footer>
 </body>
 
