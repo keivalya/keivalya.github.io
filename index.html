@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keivalya Pandya | Robot Learning Researcher</title>
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <meta name="description" content="Keivalya Pandya builds and evaluates foundation models for robots, from VLAs to world action models. MS Robotics at Northeastern.">
@@ -85,6 +88,7 @@
     <script src="js/project-stage.js" defer></script>
     <script src="js/section-index.js" defer></script>
     <script src="js/reading-progress.js" defer></script>
+    <script src="js/command-palette.js" defer></script>
 </head>
 
 <body class="light-mode">
@@ -96,29 +100,34 @@
             if (t === 'dark') document.body.className = 'dark-mode';
         })();
     </script>
-    <div class="theme-switch-wrapper">
-        <label class="theme-switch" for="checkbox">
-            <input type="checkbox" id="checkbox" onchange="toggleTheme()" />
-            <div class="slider round"></div>
-        </label>
+    <div class="top-controls">
+        <button type="button" id="cmd-trigger" class="cmd-trigger" aria-label="Open command palette">&#8984;K</button>
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+            </svg>
+        </button>
     </div>
     <header class="hero container">
         <div class="hero-text">
             <h1>Keivalya Pandya</h1>
             <p class="hero-bio">
                 <em>Namaste!</em> I'm Keivalya, an MS Robotics student at
-                <a href="https://www.khoury.northeastern.edu/" target="_blank">Northeastern</a>. I build, break, and
-                evaluate foundation models for robots, mostly to find out what makes generalist robot policies
-                <em>actually</em> generalize (and why they sometimes just stare at the cup). I interned at
-                <a href="https://www.gm.com/" target="_blank">GM</a> with
-                <a href="https://toghi.net/" target="_blank">Behrad Toghi</a>, teaching two arms to cooperate with VLAs
-                and WAMs, did RL at
-                <a href="https://www.familiarmachines.com/" target="_blank">Familiar Machines &amp; Magic</a>, and TA
-                the RL course with
+                <a href="https://www.khoury.northeastern.edu/" target="_blank">Northeastern</a>. I build and break
+                robot foundation models to see what makes them <em>actually</em> generalize. I've worked on bimanual
+                VLAs and WAMs at <a href="https://www.gm.com/" target="_blank">GM</a> with
+                <a href="https://toghi.net/" target="_blank">Behrad Toghi</a>, RL at
+                <a href="https://www.familiarmachines.com/" target="_blank">Familiar Machines &amp; Magic</a>, and HRI
+                with <a href="https://www.khoury.northeastern.edu/people/zhi-tan/" target="_blank">Zhi Tan</a>. I also
+                TA RL with
                 <a href="https://www.khoury.northeastern.edu/people/robert-platt/" target="_blank">Rob Platt</a> and
-                <a href="https://www.khoury.northeastern.edu/people/chris-amato/" target="_blank">Chris Amato</a>.
-                For fun, I built <a href="https://github.com/keivalya/mini-vla" target="_blank">mini-VLA</a>, a tiny
-                readable VLA, and <a href="pico-wam/">pico-WAM</a>, which asks robots "what if?" before they act.
+                <a href="https://www.khoury.northeastern.edu/people/chris-amato/" target="_blank">Chris Amato</a>, and
+                built <a href="https://github.com/keivalya/mini-vla" target="_blank">mini-VLA</a> and
+                <a href="pico-wam/">pico-WAM</a> for fun.
             </p>
             <p class="hero-links">
                 <a href="https://github.com/keivalya" target="_blank">GitHub</a>
@@ -135,7 +144,31 @@
             </p>
             <p class="hero-note" id="bio-text">I build robots so they work, and I play! 🤖🧠🦾</p>
         </div>
-        <img src="assets/keivalya-hero.jpg" alt="Keivalya Pandya" class="hero-img" width="200" height="240" fetchpriority="high">
+        <img src="assets/keivalya-hero.jpg" alt="Keivalya Pandya" class="hero-img" id="hero-portrait" width="200" height="240" fetchpriority="high">
+        <script>
+            (function () {
+                var photos = [
+                    'assets/keivalya-hero.jpg',
+                    'assets/me/hero-1.jpg',
+                    'assets/me/hero-2.jpg',
+                    'assets/me/hero-3.jpg'
+                ];
+                var img = document.getElementById('hero-portrait');
+                if (!img) return;
+                var last = -1;
+                try { last = parseInt(sessionStorage.getItem('heroPhotoIdx'), 10); } catch (e) { }
+                var idx;
+                do { idx = Math.floor(Math.random() * photos.length); }
+                while (photos.length > 1 && idx === last);
+                img.src = photos[idx];
+                try { sessionStorage.setItem('heroPhotoIdx', String(idx)); } catch (e) { }
+                window.cycleHeroPhoto = function () {
+                    idx = (idx + 1) % photos.length;
+                    img.src = photos[idx];
+                    try { sessionStorage.setItem('heroPhotoIdx', String(idx)); } catch (e) { }
+                };
+            })();
+        </script>
     </header>
     <div class="container">
         <section class="mb-4">
@@ -146,7 +179,9 @@
                         style="width: 100px; height: 100px; object-fit: cover;">
                     <div>
                         <h5><a href="https://robospace.app" target="_blank">RoboSpace</a></h5>
-                        <p>Train robots in your browser. No setup, no GPUs, no Docker.</p>
+                        <p>Train robots in your browser. No setup, no GPUs, no Docker. <a
+                                href="https://www.youtube.com/playlist?list=PLbXjLfqBvtxQ" target="_blank">Watch demos
+                                &rarr;</a></p>
                     </div>
                 </div>
 
@@ -254,7 +289,9 @@
                         <div class="position">
                             <h6>Graduate Research Assistant</h6>
                             <p>Simulated Human-Robot-Interaction models on NVIDIA Isaac Sim to understand how robots
-                                join human-human conversations.</p>
+                                join human-human conversations. <a
+                                    href="https://www.youtube.com/playlist?list=PLxVVxP4elh7GGlHSF6hzY96pod80GhoSR"
+                                    target="_blank">Lab demos &rarr;</a></p>
                         </div>
                     </div>
                 </div>
@@ -315,7 +352,7 @@
                                 Industry Association</h5>
                         </div>
                         <div class="company-logo">
-                            <img loading="lazy" decoding="async" src="assets/fsm.png" alt="Tesla Logo">
+                            <img loading="lazy" decoding="async" src="assets/fsm.png" alt="Foundation for Smart Manufacturing Logo">
                         </div>
                     </div>
                     <div class="timeline-content">
@@ -335,9 +372,8 @@
                         </div>
                         <div class="position">
                             <h6>Summer 2021 Research Intern</h6>
-                            <p>Researched and implemented a Digital Twin of the Smart Lathe Machine to optimize operations.
-                                You can read <a href="http://dx.doi.org/10.13140/RG.2.2.31981.87522">the technical
-                                    report here</a>.</p>
+                            <p>Researched and implemented a <a href="http://dx.doi.org/10.13140/RG.2.2.31981.87522"
+                                    target="_blank">Digital Twin of the Smart Lathe Machine</a> to optimize operations.</p>
                         </div>
                     </div>
                 </div>
@@ -425,7 +461,8 @@
                     <div>
                         <h5><a href="https://somo.keivalya.com/" target="_blank">somo</a></h5>
                         <p>Meet <strong>iro</strong>, a little home robot with emotional intelligence. Say hi, it
-                            notices you.</p>
+                            notices you. <a href="https://www.youtube.com/watch?v=c5eMa2lcEPU" target="_blank">Watch
+                                video &rarr;</a></p>
                     </div>
                 </div>
                 <div class="col-md-12 d-flex align-items-center mb-3">
@@ -464,8 +501,8 @@
                     </div>
                 </div>
                 <div class="col-md-12 d-flex align-items-center mb-3">
-                    <img loading="lazy" decoding="async" src="assets/stretch3.gif" alt="RBPF improved" class="img-fluid rounded me-3"
-                        style="width: 80px; height: 80px;">
+                    <img loading="lazy" decoding="async" src="assets/stretch3.gif" alt="Stretch 3 dexterous manipulation" class="img-fluid rounded me-3"
+                        style="width: 80px; height: 80px; object-fit: cover;">
                     <div>
                         <h5><a href="https://github.com/keivalya/cs7675" target="_blank">Dexterous Manipulation using
                                 Vision-Language-Action Modeling</a></h5>
@@ -476,7 +513,7 @@
                 </div>
                 <div class="col-md-12 d-flex align-items-center mb-3">
                     <img loading="lazy" decoding="async" src="assets/arm-man-3-sac.gif" alt="Robotic Arm Manipulation with Behavior Cloning"
-                        class="img-fluid rounded me-3" style="width: 80px; height: 80px;">
+                        class="img-fluid rounded me-3" style="width: 80px; height: 80px; object-fit: cover;">
                     <div>
                         <h5><a href="https://keivalya.github.io/arm-manipulation-behavior-cloning/"
                                 target="_blank">Robotic
@@ -486,8 +523,8 @@
                     </div>
                 </div>
                 <div class="col-md-12 d-flex align-items-center mb-3">
-                    <img loading="lazy" decoding="async" src="assets/rbpf.png" alt="RBPF improved" class="img-fluid rounded me-3"
-                        style="width: 80px; height: 80px;">
+                    <img loading="lazy" decoding="async" src="assets/rbpf.png" alt="Offline Rao-Blackwellized Particle Filter" class="img-fluid rounded me-3"
+                        style="width: 80px; height: 80px; object-fit: cover;">
                     <div>
                         <h5><a href="https://keivalya.github.io/rbpf-adaptive/" target="_blank">Offline
                                 Rao-Blackwellized
@@ -538,23 +575,81 @@
                         target="_blank">Google Scholar</a>.</i></p>
         </section>
         <section>
-            <h2>Talks</h2>
-            <p>Presented thoughts at podcasts, conferences, workshops, and seminars.</p>
+            <h2>Talks &amp; Videos</h2>
+            <p>Talks, paper walkthroughs, and robot demos.</p>
             <div class="row">
-                <div class="col-md-3 mb-4">
+                <div class="col-md-4 mb-4">
+                    <a href="https://www.youtube.com/watch?v=c5eMa2lcEPU" target="_blank">
+                        <div class="card h-100">
+                            <div class="card-thumb">
+                                <img loading="lazy" decoding="async" src="assets/iro-ai-ei.jpg" alt="iro - AI x EI">
+                                <span class="card-badge">Video</span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">iro &mdash; AI x EI</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="https://www.youtube.com/playlist?list=PLxVVxP4elh7GcaNIYGwcgkKDN9SyvzTEl" target="_blank">
+                        <div class="card h-100">
+                            <div class="card-thumb">
+                                <img loading="lazy" decoding="async" src="assets/deep-rl-papers.jpg" alt="Research Papers - Deep RL">
+                                <span class="card-badge">Playlist</span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Research Papers &mdash; Deep RL</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="https://www.youtube.com/playlist?list=PLxVVxP4elh7GGlHSF6hzY96pod80GhoSR" target="_blank">
+                        <div class="card h-100">
+                            <div class="card-thumb">
+                                <img loading="lazy" decoding="async" src="assets/parcs-hri.jpg" alt="HRI Research @ PARCS Lab, Northeastern University">
+                                <span class="card-badge">Playlist</span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">HRI Research @ PARCS Lab</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="https://www.youtube.com/playlist?list=PLbXjLfqBvtxQ" target="_blank">
+                        <div class="card h-100">
+                            <div class="card-thumb">
+                                <img loading="lazy" decoding="async" src="assets/robospace-playlist.jpg" alt="RoboSpace.app demos">
+                                <span class="card-badge">Playlist</span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">RoboSpace.app Demos</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
                     <a href="https://youtu.be/pvDL-bTFKvE" target="_blank">
                         <div class="card h-100">
-                            <img loading="lazy" decoding="async" src="assets/surviving-eng.jpg" class="card-img-top" alt="GPU Mode 2024">
+                            <div class="card-thumb">
+                                <img loading="lazy" decoding="async" src="assets/surviving-eng.jpg" alt="Surviving Engineering with Keivalya">
+                                <span class="card-badge">Talk</span>
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">Surviving Engineering with Keivalya</h5>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-md-3 mb-4">
+                <div class="col-md-4 mb-4">
                     <a href="https://youtu.be/mq1eXA9PMJY" target="_blank">
                         <div class="card h-100">
-                            <img loading="lazy" decoding="async" src="assets/how-robo.jpg" class="card-img-top" alt="No Priors podcast">
+                            <div class="card-thumb">
+                                <img loading="lazy" decoding="async" src="assets/how-robo.jpg" alt="How I made it into Robotics & AI">
+                                <span class="card-badge">Talk</span>
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">How I made it into Robotics & AI</h5>
                             </div>
@@ -576,37 +671,80 @@
                 </a>
             </div>
             <p>Writings on AI, robotics, and technology.</p>
+
+            <h3 class="entries-group">Robot Foundation Models &amp; Guides</h3>
             <ul class="entries">
-                <!-- VLA -->
                 <li class="entry">
-                    <a
-                        href="https://open.substack.com/pub/keivalya/p/building-vision-language-action-from?utm_campaign=post-expanded-share&utm_medium=web">
+                    <a href="https://medium.com/@keivalyap/building-a-world-action-model-wam-from-scratch-i-0ad41c323776" target="_blank">
+                        Building a World-Action-Model (WAM) from Scratch &mdash; I
+                    </a><br>
+                    Breaking down how World Action Models predict future states and plan actions from scratch.
+                </li>
+
+                <li class="entry">
+                    <a href="https://medium.com/@keivalyap/dreamzero-overview-of-a-robot-that-dreams-c66d7157dc82" target="_blank">
+                        DreamZero: overview of a robot that dreams
+                    </a><br>
+                    An overview of NVIDIA's DreamZero and what it means for robots that imagine before acting.
+                </li>
+
+                <li class="entry">
+                    <a href="https://open.substack.com/pub/keivalya/p/building-vision-language-action-from?utm_campaign=post-expanded-share&utm_medium=web" target="_blank">
                         Building Vision-Language-Action Model from scratch (Basics)
                     </a><br>
-                    Understand what are VLAs? How to build VLAs from scratch?!
+                    Understand what VLAs are and how to build one from scratch.
                 </li>
 
                 <li class="entry">
-                    <a href="https://medium.com/@keivalyap/building-vla-models-from-scratch-ii-0180020dbc85">
-                        Building VLA models from scratch -- II
+                    <a href="https://medium.com/@keivalyap/building-vla-models-from-scratch-ii-0180020dbc85" target="_blank">
+                        Building VLA models from scratch &mdash; II
                     </a><br>
-                    Math, Code, Implementation and Design Decisions.
+                    Math, code, implementation, and design decisions.
                 </li>
 
                 <li class="entry">
-                    <a href="https://medium.com/@keivalyap/mini-vla-with-vision-encoders-f9ba8d8d2988">
+                    <a href="https://medium.com/@keivalyap/mini-vla-with-vision-encoders-f9ba8d8d2988" target="_blank">
                         Upgrading mini-VLA with CLIP/SigLIP vision encoders
                     </a><br>
-                    How to upgrade vision tokens without rewiring entire system.
+                    How to upgrade vision tokens without rewiring the entire system.
                 </li>
 
-
-                <!-- ROS2 -->
                 <li class="entry">
-                    <a
-                        href="https://evening-carriage-281.notion.site/7b4a971e7696409da6996d54810db4ac?v=65802b79298f4778a52b4df2acb94436">ROS2
-                        Kwiki</a><br>
-                    Learn ROS2 Humble. I cover setup, Basics, Nodes & Services, Nav2, Moveit2, SLAM, and more.
+                    <a href="https://evening-carriage-281.notion.site/7b4a971e7696409da6996d54810db4ac?v=65802b79298f4778a52b4df2acb94436" target="_blank">
+                        ROS2 Kwiki
+                    </a><br>
+                    Learn ROS2 Humble: setup, basics, nodes &amp; services, Nav2, MoveIt 2, SLAM, and more.
+                </li>
+            </ul>
+
+            <h3 class="entries-group">Essays &amp; Field Notes</h3>
+            <ul class="entries">
+                <li class="entry">
+                    <a href="https://medium.com/@keivalyap/learning-in-the-factories-corl-2026-38bbfb48f8c1" target="_blank">
+                        Learning in the factories @ CoRL 2026
+                    </a><br>
+                    Notes and takeaways from Russ Tedrake's CoRL 2026 keynote on bringing robot learning into real factories.
+                </li>
+
+                <li class="entry">
+                    <a href="https://keivalya.substack.com/p/in-praise-of-glorious-waste" target="_blank">
+                        In praise of glorious waste
+                    </a><br>
+                    The universe does not run on efficiency. God never optimized.
+                </li>
+
+                <li class="entry">
+                    <a href="https://medium.com/@keivalyap/robotics-now-demos-deployments-a918fa001134" target="_blank">
+                        Robotics NOW: Demos &rarr; Deployments
+                    </a><br>
+                    Why the real differentiator in robotics today is moving from staged demos to repeatable deployments.
+                </li>
+
+                <li class="entry">
+                    <a href="https://medium.com/@keivalyap/deepseek-just-taught-us-life-29638c0cceae" target="_blank">
+                        DeepSeek just taught us&hellip; LIFE?!
+                    </a><br>
+                    Unpacking GRPO, pure RL, the &ldquo;Aha!&rdquo; moment, and lessons from open-source AI.
                 </li>
             </ul>
 

@@ -15,6 +15,7 @@
         clearTimeout(toastTimer);
         toastTimer = setTimeout(function () { toastEl.classList.remove('show'); }, 3200);
     }
+    window.showSiteToast = toast;
 
     // 1. For the curious folks who open devtools.
     console.log(
@@ -88,10 +89,10 @@
         }
 
         // 6. Flip the theme switch a lot.
-        var box = document.getElementById('checkbox');
+        var themeBtn = document.getElementById('theme-toggle');
         var flips = [];
-        if (box) {
-            box.addEventListener('change', function () {
+        if (themeBtn) {
+            themeBtn.addEventListener('click', function () {
                 var now = Date.now();
                 flips = flips.filter(function (t) { return now - t < 3000; });
                 flips.push(now);
